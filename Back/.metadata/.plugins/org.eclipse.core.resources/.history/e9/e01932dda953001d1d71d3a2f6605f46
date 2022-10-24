@@ -1,0 +1,8 @@
+package ajc.fr.thales.projetPatisserie.controller;
+
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class patisserieController {
+
+}
