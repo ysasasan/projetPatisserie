@@ -1,5 +1,5 @@
 package ajc.fr.thales.projetPatisserie.repository;
 
-public interface patisserieRepository {
+public interface PatisserieRepository {
 
 }
