@@ -42,6 +42,13 @@ public class UtilisateurController {
 		return service.getById(id);
 	}
 	
+//	@GetMapping("/utilisateur/{email}/{mdp}")
+//	public Optional<Utilisateur> getByHeaderIds(@PathVariable Long id) {
+//		if(Objects.isNull(id))
+//			throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+//		return service.getById(id);
+//	}
+	
 	@PostMapping("/utilisateur")
 	@ResponseStatus(HttpStatus.CREATED)
 	public Utilisateur createUser(@RequestBody Utilisateur u) {
