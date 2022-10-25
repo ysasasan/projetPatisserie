@@ -1,7 +1,0 @@
-package ajc.fr.thales.projetPatisserie.repository;
-
-import org.springframework.data.jpa.repository.JpaRepository;
-
-public interface patisserieRepository extends JpaRepository<Patisserie, Long>{
-
-}
