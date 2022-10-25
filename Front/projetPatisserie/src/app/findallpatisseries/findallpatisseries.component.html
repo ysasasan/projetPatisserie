@@ -1,7 +1,19 @@
 <p>findallpatisseries works!</p>
 
-<table>
-    <tr *ngFor="let pist of MyList">
+
+<table class="table">
+    <thead>
+      <tr >
+        <th scope="col">categorie</th>
+        <th scope="col">description</th>
+        <th scope="col">image</th>
+        <th scope="col">infos</th>
+        <th scope="col">nom</th>
+        <th scope="col">prix</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let pist of MyList">
         <td>
             {{pist.categorie}}
         </td>
@@ -20,7 +32,7 @@
         <td>
             {{pist.prix}}
         </td>
+      </tr>
+    </tbody>
+  </table>
 
-    </tr>
-
-</table>
