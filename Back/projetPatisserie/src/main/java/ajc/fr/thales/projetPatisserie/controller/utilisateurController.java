@@ -49,7 +49,7 @@ public class UtilisateurController {
 //		return service.getById(id);
 //	}
 	
-	@PostMapping("/utilisateur")
+	@PostMapping("/utilisateur/new")
 	@ResponseStatus(HttpStatus.CREATED)
 	public Utilisateur createUser(@RequestBody Utilisateur u) {
 		if(Objects.nonNull(u.getId()))
