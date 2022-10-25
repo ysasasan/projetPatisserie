@@ -1,11 +1,17 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
+<<<<<<< HEAD
 
 #Back
 Back/.metadata
 Back/.metadata/*
 
 
+=======
+Back/.metadata
+Back/.metadata/*
+
+>>>>>>> 456beeebd70c582c3ad5f6baec3aa5c0a4806eb6
 # Compiled output
 */dist
 */tmp

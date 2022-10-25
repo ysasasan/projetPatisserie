@@ -1,3 +1,0 @@
-INDEX VERSION 1.131
-file:/C:/Users/etien/Documents/POEI%20Angular/projetPatisserie/.metadata/.plugins/org.eclipse.jdt.core/1865797976.index
-meta_index
