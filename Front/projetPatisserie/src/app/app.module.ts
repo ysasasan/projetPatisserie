@@ -10,6 +10,9 @@ import { FooterComponent } from './footer/footer.component';
 import { AuthentificationComponent } from './authentification/authentification.component';
 import { GestionnaireUtilisateursComponent } from './gestionnaire-utilisateurs/gestionnaire-utilisateurs.component';
 import { InscriptionComponent } from './inscription/inscription.component';
+import { FindallpatisseriesComponent } from './findallpatisseries/findallpatisseries.component';
+import { FindbyidpatisserieComponent } from './findbyidpatisserie/findbyidpatisserie.component';
+import { NewpatisserieComponent } from './newpatisserie/newpatisserie.component';
 
 
 @NgModule({
@@ -19,7 +22,10 @@ import { InscriptionComponent } from './inscription/inscription.component';
     FooterComponent,
     AuthentificationComponent,
     GestionnaireUtilisateursComponent,
-    InscriptionComponent
+    InscriptionComponent,
+    FindallpatisseriesComponent,
+    FindbyidpatisserieComponent,
+    NewpatisserieComponent
   ],
   imports: [
     BrowserModule,
