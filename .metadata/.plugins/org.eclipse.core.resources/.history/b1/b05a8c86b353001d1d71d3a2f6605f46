@@ -1,6 +1,8 @@
 package ajc.fr.thales.projetPatisserie.model;
 
-
+<<<<<<< Updated upstream
+public class Patisserie {
+=======
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -86,6 +88,6 @@ public class Patisserie {
 	
 	
 	
-
+>>>>>>> Stashed changes
 
 }

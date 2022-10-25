@@ -1,9 +1,7 @@
 package ajc.fr.thales.projetPatisserie.controller;
 
 <<<<<<< HEAD
-public class PatisserieController {
-=======
-
+<<<<<<< HEAD
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,6 +40,11 @@ public class patisserieController {
 		return pr.save(p);
 				
 	}
->>>>>>> c441f95 (CR patisserie)
+=======
+public class patisserieController {
+>>>>>>> 31566d18bbada46594d2fe2a8833cb292c5e9942
+=======
+public class patisserieController {
+>>>>>>> 31566d18bbada46594d2fe2a8833cb292c5e9942
 
 }

@@ -1,8 +1,5 @@
 package ajc.fr.thales.projetPatisserie.controller;
 
-<<<<<<< HEAD
-public class PatisserieController {
-=======
 
 import java.util.List;
 
@@ -42,6 +39,5 @@ public class patisserieController {
 		return pr.save(p);
 				
 	}
->>>>>>> c441f95 (CR patisserie)
-
+>>>>>>> Stashed changes
 }

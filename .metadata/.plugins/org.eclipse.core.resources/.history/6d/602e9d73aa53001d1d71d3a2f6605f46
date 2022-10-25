@@ -1,6 +1,5 @@
 package ajc.fr.thales.projetPatisserie.model;
 
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -70,7 +69,7 @@ public class Patisserie {
 	public void setVersion(Integer version) {
 		this.version = version;
 	}
-	public Patisserie(Long id, String nom, String description, String image, String categorie, Integer prix,
+	public Patisserie(Integer id, String nom, String description, String image, String categorie, Integer prix,
 			String infos, Integer version) {
 		this.id = id;
 		this.nom = nom;
@@ -86,6 +85,5 @@ public class Patisserie {
 	
 	
 	
-
 
 }

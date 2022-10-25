@@ -1,8 +1,7 @@
 package ajc.fr.thales.projetPatisserie.repository;
 
-<<<<<<< HEAD
-public interface PatisserieRepository {
-=======
+public interface patisserieRepository {
+
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
@@ -12,6 +11,5 @@ public interface patisserieRepository extends JpaRepository<Patisserie, Long>{
 	
 	
 
->>>>>>> c441f95 (CR patisserie)
 
 }

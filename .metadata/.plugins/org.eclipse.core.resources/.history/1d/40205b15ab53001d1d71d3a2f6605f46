@@ -1,13 +1,8 @@
 package ajc.fr.thales.projetPatisserie.controller;
 
-<<<<<<< HEAD
-public class PatisserieController {
-=======
-
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -33,15 +28,10 @@ public class patisserieController {
 		
 	}
 	
-	@GetMapping("/{id}")
-	
-	
-	@PostMapping("/new")
-	@ResponseStatus(HttpStatus.CREATED)
+	@PostMapping
+	@ResponseStatus(HttpSta)
 	public Patisserie createPatisserie(@RequestBody Patisserie p) {
-		return pr.save(p);
-				
+		
 	}
->>>>>>> c441f95 (CR patisserie)
 
 }
