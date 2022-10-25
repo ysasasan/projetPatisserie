@@ -25,13 +25,13 @@ import { NewpatisserieComponent } from './newpatisserie/newpatisserie.component'
     InscriptionComponent,
     FindallpatisseriesComponent,
     FindbyidpatisserieComponent,
-    NewpatisserieComponent
+    NewpatisserieComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

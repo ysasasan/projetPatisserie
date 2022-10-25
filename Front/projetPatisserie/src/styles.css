@@ -1,1 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+
+:root {
+    --primary: #EAA636;
+    --secondary: #545454;
+    --light: #FDF5EB;
+    --dark: #1E1916;
+}
+
+.breadcrumb-item+.breadcrumb-item::before {
+    color: var(--light);
+}
