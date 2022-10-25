@@ -1,0 +1,31 @@
+package ajc.fr.thales.projetPatisserie.service;
+
+import java.util.Objects;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import ajc.fr.thales.projetPatisserie.model.Patisserie;
+import ajc.fr.thales.projetPatisserie.repository.patisserieRepository;
+
+@Service
+public class patisserieService {
+
+	@Autowired
+	patisserieRepository pr;
+	
+	
+	public Optional<Patisserie> getById(Long id) {
+		return pr.findById(id);
+	}
+	
+	public Patisserie updatePatisserie(Patisserie p) {
+		if (Objects.isNull(p)) {
+			throw new IllegalArgumentException("patisserie could not be null");
+		}
+		if(Objects.isNull(p.getId())) {
+			throw new Exception("aucun id");
+		}
+	}
+}
