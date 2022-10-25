@@ -1,22 +1,24 @@
 package ajc.fr.thales.projetPatisserie.model;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Version;
 
-@SequenceGenerator(name="user_gen",sequenceName="user_seq",initialValue=100,allocationSize=1)
+@Entity
+@SequenceGenerator(name="utilisateur_gen",sequenceName="utilisateur_seq",initialValue=100,allocationSize=1)
 public class Utilisateur {
 	
 	@Id
-	@GeneratedValue(generator="user_gen")
+	@GeneratedValue(generator="utilisateur_gen")
 	private Long id;
 	private String nom;
 	private String prenom;
 	private String email;
 	private String mdp;
 	private String numeroRue;
-	private Integer rue;
+	private String rue;
 	private String ville;
 	private String cp;
 	private String telephone;
@@ -62,10 +64,10 @@ public class Utilisateur {
 	public void setNumeroRue(String numeroRue) {
 		this.numeroRue = numeroRue;
 	}
-	public Integer getRue() {
+	public String getRue() {
 		return rue;
 	}
-	public void setRue(Integer rue) {
+	public void setRue(String rue) {
 		this.rue = rue;
 	}
 	public String getVille() {
@@ -100,7 +102,7 @@ public class Utilisateur {
 		this.version = version;
 	}
 	
-	public Utilisateur(String nom, String prenom, String email, String mdp, String numeroRue, Integer rue, String ville,
+	public Utilisateur(String nom, String prenom, String email, String mdp, String numeroRue, String rue, String ville,
 			String cp, String telephone, String role) {
 		this.nom = nom;
 		this.prenom = prenom;
@@ -115,6 +117,19 @@ public class Utilisateur {
 	}
 	
 	public Utilisateur() {
+	}
+	
+	public Utilisateur(Utilisateur user){
+		this.nom = user.nom;
+		this.prenom = user.prenom;
+		this.email = user.email;
+		this.mdp = user.mdp;
+		this.numeroRue = user.numeroRue;
+		this.rue = user.rue;
+		this.ville = user.ville;
+		this.cp = user.cp;
+		this.telephone = user.telephone;
+		this.role = user.role;
 	}
 	
 	
