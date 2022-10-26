@@ -6,6 +6,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 
+import lombok.Data;
+
+
 @Entity
 @SequenceGenerator(name = "patisserie_gen", sequenceName = "patisserie_seq", initialValue=1,allocationSize=1)
 public class Patisserie {
