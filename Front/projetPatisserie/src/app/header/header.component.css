@@ -1,4 +1,3 @@
-<<<<<<< Updated upstream
 .breadcrumb-item+.breadcrumb-item::before {
     color: var(--light);
 }
@@ -29,7 +28,6 @@
     background-repeat: no-repeat;
     background-position: 50% 50%;
 }
-=======
 /* *{
     box-sizing: border-box;
 }
@@ -304,4 +302,4 @@ h6{
         margin-top: 2%;
     }
 } */
->>>>>>> Stashed changes
+
