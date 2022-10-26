@@ -38,13 +38,15 @@ public class Commande {
 
 	@ManyToOne
 	@JoinColumn(name = "id_utilisateur")
-	@JsonIgnoreProperties({ "commandes"})
+	@JsonIgnoreProperties("commandes")
 	private Utilisateur utilisateur;
 
 	@OneToMany(mappedBy = "commande")
-	@JsonIgnoreProperties({"commandes, commande"})
+	@JsonIgnoreProperties({"patisserie.commandes, patisseries.commande, commande"})
 	private List<CommandePatisserie> patisseries;
 
+	
+	
 	public Long getId() {
 		return id;
 	}

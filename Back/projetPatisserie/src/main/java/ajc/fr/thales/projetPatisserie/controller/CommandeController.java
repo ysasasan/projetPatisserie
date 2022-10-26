@@ -11,14 +11,15 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
 import ajc.fr.thales.projetPatisserie.model.Commande;
+import ajc.fr.thales.projetPatisserie.model.exception.EmptyIdException;
 import ajc.fr.thales.projetPatisserie.model.exception.RelationException;
 import ajc.fr.thales.projetPatisserie.service.CommandeService;
 
@@ -61,22 +62,22 @@ public class CommandeController {
 		return service.create(c);
 	}
 
-//	@PutMapping
-//	public Commande updateCommande(@RequestBody Commande c) throws EmptyIdException {
-//		if (Objects.isNull(c.getId()))
-//			throw new ResponseStatusException(HttpStatus.BAD_REQUEST);
-//		return service.modifyCommande(c);
-//
-//	}
-//	
-//	@PutMapping("/{id}/confirm")
-//	public Commande confirmCommandes(@PathVariable Long id, Principal p) throws EmptyIdException {
-//		if (Objects.isNull(id))
-//			throw new ResponseStatusException(HttpStatus.BAD_REQUEST);
-//		
-//		return service.confirmCommandes(id, p);
-//
-//	}
+	@PutMapping("commande/")
+	public Commande updateCommande(@RequestBody Commande c) throws EmptyIdException {
+		if (Objects.isNull(c.getId()))
+			throw new ResponseStatusException(HttpStatus.BAD_REQUEST);
+		return service.modifyCommande(c);
+
+	}
+	
+	@PutMapping("commande/{id}/confirm")
+	public Commande confirmCommandes(@PathVariable Long id) throws Exception {
+		if (Objects.isNull(id))
+			throw new ResponseStatusException(HttpStatus.BAD_REQUEST);
+		
+		return service.confirmCommandes(id);
+
+	}
 
 
 	@DeleteMapping("/commande/{id}")
@@ -84,13 +85,13 @@ public class CommandeController {
 	public void deleteCommande(@PathVariable Long id) {
 		if (Objects.isNull(id))
 			throw new ResponseStatusException(HttpStatus.BAD_REQUEST,"Id de commande non renseigné");
-		service.deleteCommande(id);
+		service.delete(id);
 	}
 	
 	
-//	@GetMapping("/not-confirmed")
-//	public List<Commande> getCommandesNotConfirmed() {
-//	return service.getCommandesNotConfirmed();
-//	}
+	@GetMapping("commandes/not-confirmed")
+	public List<Commande> getCommandesNotConfirmed() {
+	return service.getCommandesNotConfirmed();
+	}
 
 }

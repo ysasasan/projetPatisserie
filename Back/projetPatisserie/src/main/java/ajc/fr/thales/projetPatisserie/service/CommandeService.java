@@ -15,9 +15,8 @@ import ajc.fr.thales.projetPatisserie.model.CommandePatisserie;
 import ajc.fr.thales.projetPatisserie.model.Patisserie;
 import ajc.fr.thales.projetPatisserie.model.Utilisateur;
 import ajc.fr.thales.projetPatisserie.model.embeddedId.CommandePatisserieId;
-import ajc.fr.thales.projetPatisserie.model.exception.EmptyIdException;
 import ajc.fr.thales.projetPatisserie.repository.CommandeRepository;
-import ajc.fr.thales.projetPatisserie.repository.PatisserieRepository;
+
 
 @Service
 public class CommandeService {
@@ -94,23 +93,60 @@ public class CommandeService {
 
 	}
 
-//	public Commande modifyCommande(Commande c) throws EmptyIdException {
-//		return repoCmd.save(c);
-//	}
-
-	public void deleteCommande(Long id) {
-		Optional<Commande> cmd = repoCmd.findById(id);
-		if(Objects.isNull(cmd))
-			throw new ResponseStatusException(HttpStatus.NOT_FOUND,"Commande inexistante");
+	public Commande modifyCommande(Commande c) {
 		
-		cmdPatService.deleteByCommandeId(id);
-		repoCmd.deleteById(id);
+		Optional<Commande> optC = repoCmd.findById(c.getId());
+		
+		if(Objects.isNull(optC))
+			throw new ResponseStatusException(HttpStatus.BAD_REQUEST,"Cette commande n'existe pas");
+		
+		Commande validCmd = optC.get();
+		
+		if(validCmd.getConfirme())
+			throw new ResponseStatusException(HttpStatus.BAD_REQUEST,"Cette commande n'a pas été confirmée");
+		
+		c.setDateCreation(validCmd.getDateCreation());
+		delete(c.getId());
+		create(c);
+		
+		return repoCmd.save(c);
 	}
 
-//	public List<Commande> getCommandesNotConfirmed() {
-//		return repoCmd.findByConfirmeFalse();
-//	}
-//
+	public void delete(Long id) {
+		
+		Optional<Commande> optC = repoCmd.findById(id);
+		
+		if(Objects.isNull(optC))
+			throw new ResponseStatusException(HttpStatus.BAD_REQUEST,"Cette commande n'existe pas");
+				
+		cmdPatService.deleteByCmdPatbyCmdId(id);
+		//repoCmd.deleteById(id);
+	}
+
+	public List<Commande> getCommandesNotConfirmed() {
+		return repoCmd.findByConfirmeFalse();
+	}
+	
+	public Commande confirmCommandes(Long id) throws Exception {
+		Commande cmd = checkCommandeById(id);
+
+		for (CommandePatisserie cp : cmd.getPatisseries()) {
+			Patisserie patisserieBdd = patisserieService.getById(cp.getPatisserie().getId()).get();
+			Integer cpStock = patisserieBdd.getQteStock();
+			Integer restAfterCmd = cpStock - cp.getQuantite();
+			if (restAfterCmd <= 0)
+				throw new ResponseStatusException(HttpStatus.CONFLICT,
+						"Pas assez de stock sur " + patisserieBdd.getNom());
+
+			patisserieBdd.setQteStock(restAfterCmd);
+			patisserieService.updatePatisserie(patisserieBdd);
+		}
+
+		cmd.setConfirme(true);
+		return repoCmd.save(cmd);
+
+	}
+
 //	public Commande confirmCommandes(Long id, Principal p) throws EmptyIdException {
 //		checkUser(id, p);
 //		Commande cmd = checkCommandeById(id);
@@ -150,11 +186,11 @@ public class CommandeService {
 //	}
 
 
-//	private Commande checkCommandeById(Long id) throws EmptyIdException {
-//		Optional<Commande> cmd = repoCmd.findById(id);
-//		if (Objects.isNull(cmd))
-//			throw new ResponseStatusException(HttpStatus.UNAUTHORIZED);
-//		return cmd.get();
-//	}
+	private Commande checkCommandeById(Long id){
+		Optional<Commande> cmd = repoCmd.findById(id);
+		if (Objects.isNull(cmd))
+			throw new ResponseStatusException(HttpStatus.UNAUTHORIZED);
+		return cmd.get();
+	}
 	
 }

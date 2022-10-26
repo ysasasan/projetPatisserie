@@ -5,8 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
+import javax.persistence.Version;
 
-import lombok.Data;
 
 
 @Entity
@@ -23,6 +23,9 @@ public class Patisserie {
 	private String categorie;
 	private Integer prix;
 	private String infos;
+	private Integer qteStock;
+	
+	@Version
 	private Integer version;
 	
 	public Long getId() {
@@ -64,6 +67,12 @@ public class Patisserie {
 	public String getInfos() {
 		return infos;
 	}
+	public Integer getQteStock() {
+		return qteStock;
+	}
+	public void setQteStock(Integer qteStock) {
+		this.qteStock = qteStock;
+	}
 	public void setInfos(String infos) {
 		this.infos = infos;
 	}
@@ -73,22 +82,28 @@ public class Patisserie {
 	public void setVersion(Integer version) {
 		this.version = version;
 	}
-	public Patisserie(Long id, String nom, String description, String image, String categorie, Integer prix,
-			String infos, Integer version) {
-		this.id = id;
+	
+	public Patisserie(String nom, String description, String image, String categorie, Integer prix,
+			String infos, Integer qteStock) {
 		this.nom = nom;
 		this.description = description;
 		this.image = image;
 		this.categorie = categorie;
 		this.prix = prix;
 		this.infos = infos;
-		this.version = version;
+		this.qteStock = qteStock;
 	}
 	public Patisserie() {
 	}
 	
 	
+	@Override
+	public String toString() {
+		return "Patisserie [id=" + id + ", nom=" + nom + ", description=" + description + ", image=" + image
+				+ ", categorie=" + categorie + ", prix=" + prix + ", infos=" + infos + ", qteStock=" + qteStock
+				+ ", version=" + version + "]";
+	}
 	
-
+	
 
 }
