@@ -1,0 +1,10 @@
+<p>test works!</p>
+
+<button (click)="openModal()">open</button>
+
+<div class="modal" *ngIf="!modalClosed">
+    <div>
+      <div><button (click)="closeModal()">X</button></div>
+        <p>hello</p>
+     </div>
+</div>

@@ -12,9 +12,13 @@ import { GestionnaireUtilisateursComponent } from './gestionnaire-utilisateurs/g
 import { InscriptionComponent } from './inscription/inscription.component';
 import { FindbyidpatisserieComponent } from './findbyidpatisserie/findbyidpatisserie.component';
 import { NewpatisserieComponent } from './newpatisserie/newpatisserie.component';
+<<<<<<< Updated upstream
 import { PanierComponent } from './panier/panier.component';
 import { CommandeComponent } from './commande/commande.component';
 
+=======
+import { TestComponent } from './test/test.component';
+>>>>>>> Stashed changes
 
 
 @NgModule({
@@ -28,8 +32,12 @@ import { CommandeComponent } from './commande/commande.component';
     CommandeComponent,
     FindbyidpatisserieComponent,
     NewpatisserieComponent,
+<<<<<<< Updated upstream
     PanierComponent,
     CommandeComponent,
+=======
+    TestComponent,
+>>>>>>> Stashed changes
   ],
   imports: [
     BrowserModule,

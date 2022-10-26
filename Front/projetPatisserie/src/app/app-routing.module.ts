@@ -8,7 +8,11 @@ import { GestionnaireUtilisateursComponent } from './gestionnaire-utilisateurs/g
 import { HeaderComponent } from './header/header.component';
 import { InscriptionComponent } from './inscription/inscription.component';
 import { NewpatisserieComponent } from './newpatisserie/newpatisserie.component';
+<<<<<<< Updated upstream
 import { PanierComponent } from './panier/panier.component';
+=======
+import { TestComponent } from './test/test.component';
+>>>>>>> Stashed changes
 
 const routes: Routes = [
   {path: 'header', component: HeaderComponent},
@@ -19,7 +23,11 @@ const routes: Routes = [
   {path: 'commande', component: CommandeComponent},
   {path: 'findbyidpatisserie/:id', component: FindbyidpatisserieComponent},
   {path: 'newpatisserie', component: NewpatisserieComponent},
+<<<<<<< Updated upstream
   {path: 'panier', component: PanierComponent},
+=======
+  {path: 'test', component: TestComponent}
+>>>>>>> Stashed changes
 
 ];
 
