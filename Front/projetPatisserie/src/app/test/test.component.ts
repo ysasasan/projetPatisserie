@@ -6,8 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./test.component.css']
 })
 export class TestComponent implements OnInit {
+
   modalClosed = true;
   personne={nom:"sasa", prenom:"yuko"}
+
 
   constructor() { }
 
