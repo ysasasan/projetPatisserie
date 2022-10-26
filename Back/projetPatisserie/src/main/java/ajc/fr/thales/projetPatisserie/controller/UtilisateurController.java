@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
@@ -34,7 +35,26 @@ public class UtilisateurController {
 	public List<Utilisateur> getAllUtilisateurs() {
 		return service.findAll();
 	}
+	
+	@GetMapping("/utilisateur/{email}/{mdp}")
+	public Utilisateur getByMailPass(@PathVariable String email, @PathVariable String mdp) {
+		if(Objects.isNull(email))
+			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Email non renseigné");
+		if(Objects.isNull(mdp))
+			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Mot de passe non renseigné");
+		return service.getByMailPass(email, mdp);
+	}
+	
 
+	@GetMapping("/utilisateur/connexion")
+	public Utilisateur getByHeaderIds(@RequestHeader String email, @RequestHeader String mdp) {
+		if(Objects.isNull(email))
+			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Email non renseigné");
+		if(Objects.isNull(mdp))
+			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Mot de passe non renseigné");
+		return service.getByMailPass(email, mdp);
+	}
+	
 	@GetMapping("/utilisateur/{id}")
 	public Optional<Utilisateur> getById(@PathVariable Long id) {
 		if(Objects.isNull(id))

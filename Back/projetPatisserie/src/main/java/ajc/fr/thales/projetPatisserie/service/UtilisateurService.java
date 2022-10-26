@@ -32,6 +32,13 @@ public class UtilisateurService {
 		return repo.save(user);
 	}
 	
+	public Utilisateur getByMailPass(String email, String mdp) {
+		Optional<Utilisateur> user = repo.findByEmailAndMdp(email, mdp);
+		if(Objects.isNull(user))
+			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Pas d'utilisateur avec ces identfiants");
+		return user.get();
+	}
+	
 //	public Client registerUserAsClient(Map<Utilisateur, Client> UtilisateurClient) {
 //		
 //		System.out.println(UtilisateurClient);
@@ -45,7 +52,7 @@ public class UtilisateurService {
 	
 	public Utilisateur updateUser(Utilisateur u) throws EmptyIdException {
 		Utilisateur user = this.checkUser(u);
-		Optional userToModify = repo.findById(user.getId());
+		Optional<Utilisateur> userToModify = repo.findById(user.getId());
 		if(Objects.isNull(userToModify))
 			throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "L'utilisateur avec cet id n'existe pas");
 		Utilisateur verifiedUser = (Utilisateur) userToModify.get();
@@ -61,7 +68,6 @@ public class UtilisateurService {
 		verifiedUser.setRole(user.getRole());
 		return repo.save(verifiedUser);
 	}
-
 
 	private Utilisateur checkUser(Utilisateur u) throws EmptyIdException {
 		if (Objects.isNull(u.getId()) || !this.getById(u.getId()).isPresent()) {
