@@ -18,9 +18,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
+
 @Entity
 @SequenceGenerator(name="commande_gen", sequenceName="commande_seq", initialValue=100, allocationSize=1)
 public class Commande {
