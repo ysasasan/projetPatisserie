@@ -1,9 +1,9 @@
 <p>commande works!</p>
 
-<div class="text-center">
+<div class="panier">
     <button type="button" href="#myModal" class="btn btn-demo" data-bs-toggle="modal" role="button">
-        Panier
-    </button>
+        Voir le panier
+        <i class="fa-solid fa-basket-shopping"></i></button>
 </div>
 
 <section id="sidebar">
@@ -16,16 +16,16 @@
         <div id="orange"><span class="fa fa-minus"></span></div>
         <form>
             <div class="form-group">
-                <input type="checkbox" id="artisan">
-                <label for="artisan">Gâteau</label>
+                <input type="checkbox" id="gateau">
+                <label for="gateau">Gâteau</label>
             </div>
             <div class="form-group">
-                <input type="checkbox" id="breakfast">
-                <label for="breakfast">Tarte</label>
+                <input type="checkbox" id="tarte">
+                <label for="tarte">Tarte</label>
             </div>
             <div class="form-group">
-                <input type="checkbox" id="healthy">
-                <label for="healthy">Mignardise</label>
+                <input type="checkbox" id="mignardise">
+                <label for="mignardise">Mignardise</label>
             </div>                                
         </form>
     </div>
@@ -35,19 +35,6 @@
 <!-- products section -->
 <section id="products">
     <div class="container">
-        <div class="d-flex flex-row">
-            <div class="text-muted m-2" id="res">Showing 44 results</div>
-            <div class="ml-auto mr-lg-4">
-                <div id="sorting" class="border rounded p-1 m-1">
-                    <span class="text-muted">Sort by</span>
-                    <select name="sort" id="sort">
-                        <option value="popularity"><b>Popularity</b></option>
-                        <option value="prcie"><b>Price</b></option>
-                        <option value="rating"><b>Rating</b></option>
-                    </select>
-                </div>
-            </div>
-        </div>
         <div class="row">
             <div class="col-lg-4 col-md-6 col-sm-10 offset-md-0 offset-sm-1" *ngFor="let pist of  MyList ">
                 <div class="card">
@@ -100,6 +87,8 @@
         <input type="number" id="quantité" name="quantité"
         min="0" max={{p.qteStock}} [(ngModel)]="quantite">
 
+        <p class="message">{{message}}</p>
+
       </div>
 
 
@@ -115,8 +104,7 @@
 			<div class="modal-content">
 
 				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-					<h4 class="modal-title" id="myModalLabel">Panier</h4>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 				</div>
 
 				<div class="modal-body">
@@ -125,6 +113,13 @@
                     <div>
                         <table>
                             
+                            <tr>
+                                <th>Quantite</th>
+                                <th>Patisserie</th>
+                                <th>Prix</th>
+                            </tr>
+
+
                             <tr *ngFor="let ligne of panier">
                                 <td>{{ligne.quantite}}</td>
                                 <td>{{ligne.patisserie.nom}}</td>
@@ -136,6 +131,8 @@
                                 </td>
                             </tr>
                         </table>
+
+                        <button class="btn btn-primary">Valider votre commande</button>
                     
                         
                     </div>

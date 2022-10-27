@@ -9,7 +9,7 @@ import { Utilisateur } from '../utilisateur';
 })
 export class HeaderComponent implements OnInit {
 
-  client: Boolean = false;
+  client: Boolean = true;
   manager:Boolean = false;
   administrateur:Boolean = false;
   utilisateur:Utilisateur;
