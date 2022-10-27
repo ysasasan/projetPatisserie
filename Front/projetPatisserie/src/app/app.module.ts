@@ -13,6 +13,7 @@ import { InscriptionComponent } from './inscription/inscription.component';
 import { FindallpatisseriesComponent } from './findallpatisseries/findallpatisseries.component';
 import { FindbyidpatisserieComponent } from './findbyidpatisserie/findbyidpatisserie.component';
 import { NewpatisserieComponent } from './newpatisserie/newpatisserie.component';
+import { CarteComponent } from './carte/carte.component';
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import { NewpatisserieComponent } from './newpatisserie/newpatisserie.component'
     FindallpatisseriesComponent,
     FindbyidpatisserieComponent,
     NewpatisserieComponent,
+    CarteComponent,
   ],
   imports: [
     BrowserModule,

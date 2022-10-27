@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthentificationComponent } from './authentification/authentification.component';
+import { CarteComponent } from './carte/carte.component';
 import { FindallpatisseriesComponent } from './findallpatisseries/findallpatisseries.component';
 import { FindbyidpatisserieComponent } from './findbyidpatisserie/findbyidpatisserie.component';
 import { FooterComponent } from './footer/footer.component';
@@ -17,7 +18,8 @@ const routes: Routes = [
   {path: 'gestionnaire-utilisateurs', component: GestionnaireUtilisateursComponent},
   {path: 'findallpatisseries', component: FindallpatisseriesComponent},
   {path: 'findbyidpatisserie/:id', component: FindbyidpatisserieComponent},
-  {path: 'newpatisserie', component: NewpatisserieComponent}
+  {path: 'newpatisserie', component: NewpatisserieComponent},
+  {path: 'carte', component: CarteComponent}
 
 ];
 
