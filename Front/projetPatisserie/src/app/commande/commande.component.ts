@@ -16,8 +16,10 @@ export class CommandeComponent implements OnInit {
   quantite: number = 0
   prixLigne: number = 0
   total: number = 0
+  message: string
   // ligne: Ligne = new Ligne();
-  message: string;
+
+  showMyMessage = false
   
   constructor(private http: HttpClient) { }
 
@@ -44,6 +46,7 @@ export class CommandeComponent implements OnInit {
     this.p.image=image
     this.p.description=description
     this.p.prix=prix
+    this.message=""
   }
 
   
@@ -51,6 +54,7 @@ export class CommandeComponent implements OnInit {
 
     let ligne: Ligne = new Ligne();
     let patisserie: Patisserie = new Patisserie()
+
     patisserie.nom=this.p.nom
     // ligne.patisserie.nom=this.p.nom
 
@@ -64,11 +68,15 @@ export class CommandeComponent implements OnInit {
 
     this.total+=ligne.prix
 
+    this.quantite=0
     this.message="Ajouté au panier"
+
   }
+
 
   validate(){
     sessionStorage.setItem("panier",JSON.stringify(this.panier))
+
   }
 
   edit(i:any){
