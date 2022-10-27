@@ -1,76 +1,26 @@
-.fa-user-o,.fa-shopping-cart{
-    font-size: 20px;
-    padding: 4px;
+.price{
+    margin-left: 5px;
 }
-.form-group{
-    margin-bottom: 5px;
-}
-label{
-    padding-left: 10px;
-}
-.form-group:last-child{
-    margin-bottom: 0;
-}
-h6{
-    margin-bottom: 0px;
-}
-#sort{
-    outline: none;
-    border: none;
-}
-.btn{
-    border: 1px solid orange;
-    border-radius: 10px;
-    background-color: #fff;
-}
-.btn:hover{
-    color: #fff;
-    background-color: orange;
-}
+
 .card-body{
     padding: 8px;
 }
-.sign{
-    width: 25px;
-    height: 25px;
+
+.products{
+    margin-left: 10px;
 }
-.discount{
-    border: 1px solid orange;
-    border-radius: 5px;
-    width: 65px;
-    position: absolute;
-    top: 2%;
-}
+
 @media(min-width:1200px){
-    #search{
-        width: 300px;
-        padding: 5px;
-        padding-left: 20px;
-    }
-    .search-nav-item{
-        margin-left: 400px;
-        width: 350px;
-    }
-    .fa-user-o{
-        margin-left: 300px;
-    }
+   
     .text{
-        display: none;
-    }
-    .fa-user-o,.fa-shopping-cart{
-        font-size: 20px;
-        padding-left: 20px;
-    }
-    #sidebar{
-        width: 30%;
-        padding: 20px;
-        float: left;
+        display: inline-block;
     }
     #products{
         width: 70%;
         padding: 10px;
         margin: 0;
         float: right;
+        
     }
     .card{
         width: 300px;
@@ -82,34 +32,14 @@ h6{
         height: 200px;
         border-radius: 10px;
     }
-    del{
-        padding-right: 2px;
-    }
-    .filter,#mobile-filter{
-        display: none;
-    }
+   
 }
 @media(min-width:992px) and (max-width:1199px){
-    #search{
-        width: 300px;
-        padding: 5px;
-        padding-left: 20px;
-    }
-    .search-nav-item{
-        margin-left: 200px;
-        width: 350px;
-    }
-    .fa-user-o{
-        margin-left: 160px;
-    }
+    
     .text{
         display: none;
     }
-    #sidebar{
-        width: 30%;
-        padding: 20px;
-        float: left;
-    }
+   
     #products{
         width: 70%;
         padding: 10px;
@@ -126,122 +56,51 @@ h6{
         height: 200px;
         border-radius: 10px;
     }
-    .fa-plus,.fa-minus{
-        font-size: 12px;
-    }
-    .sign{
-        height: 25px;
-    }
+   
+   
     .price{
         width: 99px;
+        margin-right: 3px;
     }
-    .filter,#mobile-filter{
-        display: none;
-    }
+    
 }
 @media(min-width:768px) and (max-width:991px){
-    #search{
-        width: 300px;
-        padding: 5px;
-        padding-left: 20px;
-    }
-    .search-nav-item{
-        margin-left: 60px;
-        width: 350px;
-    }
-    .fa-user-o{
-        margin-left: 80px;
-    }
+    
+   
     .text{
         display: none;
     }
-    #sidebar{
-        width: 35%;
-        padding: 20px;
-        float: left;
-    }
+  
     #products{
         width: 65%;
         padding: 10px;
-        margin: 0;
+        margin-left: 100%;
         float: right;
     }
     .card{
         border: none;
     }
-    .filter,#mobile-filter{
-        display: none;
-    }
+    
 }
 @media(min-width:576px) and (max-width:767px){
     .text{
         display: none;
     }
-    .search-nav-item{
-        margin-left: 35px;
-        width: 270px;
-    }
-    #search{
-        width: 240px;
-        padding: 5px;
-        padding-left: 20px;
-    }
-    .fa-search{
-        padding: 3px;
-        font-size: 18px;
-    }
-    #sidebar{
-        width: 40%;
-        padding: 20px;
-        float: left;
-    }
+   
     #products{
         width: 60%;
         padding: 10px;
         margin: 0;
         float: right;
+        
     }
     .card{
         border: none;
     }
-    #off{
-        padding-left: 2px;
-    }
-    #sorting span,#res{
-        font-size: 14px;
-    }
-    .filter,#mobile-filter{
-        display: none;
-    }
+   
+   
 }
-@media(max-width:575px){
-    .search-nav-item{
-        margin: 0;
-        width: 100%;
-        margin-top: 10px;
-    }
-    #search{
-        width: 80%;
-        padding-left: 10px;
-        margin-top: 10px;
-        padding-right: 10px;
-    }
-    .fa-search{
-        padding: 10px;
-        font-size: 18px;
-    }
-    #sidebar{
-        display: none;
-    }
-    .filter{
-        margin-left: 70%;
-        margin-top: 2%;
-    }
-    #sorting,#res{
-        font-size: 12px;
-        margin-top: 2%;
-    }
-}
+
 
 .img_modal{
     width: 400px;
@@ -250,49 +109,6 @@ h6{
 
 
 
-.modal.left .modal-dialog,
-	.modal.right .modal-dialog {
-		position: fixed;
-		margin: auto;
-		width: 320px;
-		height: 100%;
-		-webkit-transform: translate3d(0%, 0, 0);
-		    -ms-transform: translate3d(0%, 0, 0);
-		     -o-transform: translate3d(0%, 0, 0);
-		        transform: translate3d(0%, 0, 0);
-	}
 
-	.modal.left .modal-content,
-	.modal.right .modal-content {
-		height: 100%;
-		overflow-y: auto;
-	}
-	
-	.modal.left .modal-body,
-	.modal.right .modal-body {
-		padding: 15px 15px 80px;
-	}
 
-/*Right*/
-.modal.right.fade .modal-dialog {
-    right: -320px;
-    -webkit-transition: opacity 0.3s linear, right 0.3s ease-out;
-       -moz-transition: opacity 0.3s linear, right 0.3s ease-out;
-         -o-transition: opacity 0.3s linear, right 0.3s ease-out;
-            transition: opacity 0.3s linear, right 0.3s ease-out;
-}
 
-.modal.right.fade.in .modal-dialog {
-    right: 0;
-}
-
-/* ----- MODAL STYLE ----- */
-.modal-content {
-    border-radius: 0;
-    border: none;
-}
-
-.modal-header {
-    border-bottom-color: #EEEEEE;
-    background-color: #FAFAFA;
-}
