@@ -1,93 +1,98 @@
 <p>carte works!</p>
 
-    <div class="container">
-<h3 class="categories">Les Tartes</h3>
 
-<div class="row">
-    
-    <div class="col"  *ngFor="let pist of  MyList ">
+
+<!-- products section -->
+<div class="products">
+    <div class="container text-center">
+        <h3 class="categories">Les Tartes</h3>
         
-        <div class="card" *ngIf="pist.categorie==='tarte'">
-            <img class="card-img-top" src="/assets/img/{{pist.image }}" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">           
-                    <a>
-                    <span style="font-weight: bold;" >{{pist.nom }}</span>
-                </a></h5>
-                <div class="d-flex flex-row my-2">
-                    <div class="text-muted d-flex align-items-start">{{ pist.prix }}&euro;</div>
-                    <div class="d-flex align-items-center">
-                        <span class="card-text  ">{{pist.description}}</span>
-                        
+        <div class="row justify-content-start">
+            
+            <div class="col "  *ngFor="let pist of  MyList ">
+                
+                <div class="card" *ngIf="pist.categorie==='tarte'">
+                    <img class="card-img-top" src="/assets/img/{{pist.image }}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">           
+                            <a>
+                            <span style="font-weight: bold;" >{{pist.nom }}</span>
+                        </a></h5>
+                        <div class="">
+                                <div class="text-muted d-flex align-items-end">{{ pist.prix }}&euro;</div>
+                                <div class="">
+                                    <span class="card-text ">{{pist.description}}</span>
+                                    
+                                </div>
+                           
+                        </div> 
+                           
+                    </div>
                 </div>
-                    <!-- <button class="btn w-100 rounded my-2 btn-primary" data-bs-toggle="modal" href="#exampleModalToggle" role="button" (click)="getPatisserie(pist.nom,pist.image,pist.description,pist.prix)">Ajouter au panier</button> -->
-                </div> 
-                   
             </div>
+            
         </div>
     </div>
-    
-</div>
-</div>
-
-
-    <div class="container">
-<h3 class="categories">Les Miniardises</h3>
-
-<div class="row">
-    
-    <div class="col"  *ngFor="let pist of  MyList ">
+    <div class="container text-center">
+        <h3 class="categories">Les Gâteaux</h3>
         
-        <div class="card" *ngIf="pist.categorie==='miniardise'">
-            <img class="card-img-top" src="/assets/img/{{pist.image }}" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">           
-                    <a>
-                    <span style="font-weight: bold;" >{{pist.nom }}</span>
-                </a></h5>
-                <div class="d-flex flex-row my-2">
-                    <div class="text-muted d-flex align-items-start">{{ pist.prix }}&euro;</div>
-                    <div class="d-flex align-items-center">
-                        <span class="card-text  ">{{pist.description}}</span>
-                        
+        <div class="row justify-content-start">
+            
+            <div class="col "  *ngFor="let pist of  MyList ">
+                
+                <div class="card" *ngIf="pist.categorie==='gateau'">
+                    <img class="card-img-top" src="/assets/img/{{pist.image }}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">           
+                            <a>
+                            <span style="font-weight: bold;" >{{pist.nom }}</span>
+                        </a></h5>
+                        <div class="">
+                                <div class="text-muted d-flex align-items-end">{{ pist.prix }}&euro;</div>
+                                <div class="d-flex align-items-end">
+                                    <span class="card-text ">{{pist.description}}</span>
+                                    
+                                </div>
+                           
+                        </div> 
+                           
+                    </div>
                 </div>
-                    <!-- <button class="btn w-100 rounded my-2 btn-primary" data-bs-toggle="modal" href="#exampleModalToggle" role="button" (click)="getPatisserie(pist.nom,pist.image,pist.description,pist.prix)">Ajouter au panier</button> -->
-                </div> 
-                   
             </div>
+            
         </div>
     </div>
-    
-</div>
-</div>
-
-
-    <div class="container">
-<h3 class="categories">Les Gâteaux</h3>
-
-<div class="row">
-    
-    <div class="col"  *ngFor="let pist of  MyList ">
+    <div class="container text-center">
+        <h3 class="categories">Les Miniardises</h3>
         
-        <div class="card" *ngIf="pist.categorie==='gateau'">
-            <img class="card-img-top" src="/assets/img/{{pist.image }}" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">           
-                    <a>
-                    <span style="font-weight: bold;" >{{pist.nom }}</span>
-                </a></h5>
-                <div class="d-flex flex-row my-2">
-                    <div class="text-muted d-flex align-items-start">{{ pist.prix }}&euro;</div>
-                    <div class="d-flex align-items-center">
-                        <span class="card-text  ">{{pist.description}}</span>
-                        
+        <div class="row justify-content-start">
+            
+            <div class="col "  *ngFor="let pist of  MyList ">
+                
+                <div class="card" *ngIf="pist.categorie==='miniardise'">
+                    <img class="card-img-top" src="/assets/img/{{pist.image }}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">           
+                            <a>
+                            <span style="font-weight: bold;" >{{pist.nom }}</span>
+                        </a></h5>
+                        <div class="">
+                                <div class="text-muted d-flex align-items-end">{{ pist.prix }}&euro;</div>
+                                <div class="d-flex align-items-end">
+                                    <span class="card-text ">{{pist.description}}</span>
+                                    
+                                </div>
+                           
+                        </div> 
+                           
+                    </div>
                 </div>
-                    <!-- <button class="btn w-100 rounded my-2 btn-primary" data-bs-toggle="modal" href="#exampleModalToggle" role="button" (click)="getPatisserie(pist.nom,pist.image,pist.description,pist.prix)">Ajouter au panier</button> -->
-                </div> 
-                   
             </div>
+            
         </div>
     </div>
+</div>
+
     
-</div>
-</div>
+
+
