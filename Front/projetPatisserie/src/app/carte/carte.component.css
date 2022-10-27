@@ -1,15 +1,43 @@
+
 div{
     margin: 0;
     padding: 0;
 }
 
-
-
-
 .price{
    
     width: 99px;
     
+
+.card-img-top{
+    width:15rem;
+    height:12rem;
+    margin-right:auto;
+    margin-left:auto;
+}
+
+.categories{
+    margin-top:3rem;
+    margin-bottom:3rem;
+    margin-right:auto;
+    margin-left:auto;
+
+}
+
+.container{
+    margin-right:auto;
+    margin-left:auto;
+    width: 50rem;
+}
+
+.card{
+    margin-top:2rem;
+}
+
+
+/* .price{
+    margin-left: 5px;
+>>>>>>> Stashed changes
 }
 
 .card-body{
@@ -44,7 +72,7 @@ div{
 .img_modal{
     width: 400px;
     height: 400px;
-}
+} */
 
 
 

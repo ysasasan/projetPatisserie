@@ -1,7 +1,5 @@
 <p>carte works!</p>
 
-
-
 <!-- products section -->
 <div class="products">
     <div class="container text-center">
@@ -28,71 +26,54 @@
                         </div> 
                            
                     </div>
+
+<div class="container">
+    <h3 class="categories">Les Tartes</h3>
+    <div class="row">
+        <div class="col" *ngFor="let pist of MyList">
+            <div class="card" style="width: 18rem;" *ngIf="pist.categorie==='tarte'">
+                <img class="card-img-top" src="/assets/img/{{pist.image}}" class="card-img-top" alt="{{pist.image}}">
+                <div class="card-body">
+                    <h5 class="card-title">{{pist.nom }}</h5>
+                    <div class="text-muted d-flex align-items-end">{{ pist.prix}}&euro;</div>
+                    <p class="card-text"><span class="card-text ">{{pist.description}}</span></p>
+
                 </div>
             </div>
-            
-        </div>
-    </div>
-    <div class="container text-center">
-        <h3 class="categories">Les Gâteaux</h3>
-        
-        <div class="row justify-content-start">
-            
-            <div class="col "  *ngFor="let pist of  MyList ">
-                
-                <div class="card" *ngIf="pist.categorie==='gateau'">
-                    <img class="card-img-top" src="/assets/img/{{pist.image }}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">           
-                            <a>
-                            <span style="font-weight: bold;" >{{pist.nom }}</span>
-                        </a></h5>
-                        <div class="">
-                                <div class="text-muted d-flex align-items-end">{{ pist.prix }}&euro;</div>
-                                <div class="d-flex align-items-end">
-                                    <span class="card-text ">{{pist.description}}</span>
-                                    
-                                </div>
-                           
-                        </div> 
-                           
-                    </div>
-                </div>
-            </div>
-            
-        </div>
-    </div>
-    <div class="container text-center">
-        <h3 class="categories">Les Miniardises</h3>
-        
-        <div class="row justify-content-start">
-            
-            <div class="col "  *ngFor="let pist of  MyList ">
-                
-                <div class="card" *ngIf="pist.categorie==='miniardise'">
-                    <img class="card-img-top" src="/assets/img/{{pist.image }}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">           
-                            <a>
-                            <span style="font-weight: bold;" >{{pist.nom }}</span>
-                        </a></h5>
-                        <div class="">
-                                <div class="text-muted d-flex align-items-end">{{ pist.prix }}&euro;</div>
-                                <div class="d-flex align-items-end">
-                                    <span class="card-text ">{{pist.description}}</span>
-                                    
-                                </div>
-                           
-                        </div> 
-                           
-                    </div>
-                </div>
-            </div>
-            
         </div>
     </div>
 </div>
 
-    
+<div class="container">
+    <h3 class="categories">Les Gâteaux</h3>
+    <div class="row">
+        <div class="col" *ngFor="let pist of MyList">
+            <div class="card" style="width: 18rem;" *ngIf="pist.categorie==='gateau'">
+                <img class="card-img-top" src="/assets/img/{{pist.image }}" class="card-img-top" alt="{{pist.image}}">
+                <div class="card-body">
+                    <h5 class="card-title">{{pist.nom }}</h5>
+                    <div class="text-muted d-flex align-items-end">{{ pist.prix}}&euro;</div>
+                    <p class="card-text"><span class="card-text ">{{pist.description}}</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
+<div class="container">
+    <h3 class="categories">Les Miniardises</h3>
+    <div class="row">
+        <div class="col" *ngFor="let pist of MyList">
+            <div class="card" style="width: 18rem;" *ngIf="pist.categorie==='migniardise'">
+                <img class="card-img-top" src="/assets/img/{{pist.image}}" class="card-img-top" alt="{{pist.nom}}">
+                <div class="card-body">
+                    <h5 class="card-title">{{pist.nom }}</h5>
+                    <div class="text-muted d-flex align-items-end">{{ pist.prix }}&euro;</div>
+                    <p class="card-text"><span class="card-text ">{{pist.description}}</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    
 
