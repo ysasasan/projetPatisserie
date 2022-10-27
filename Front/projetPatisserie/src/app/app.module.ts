@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,13 +14,13 @@ import { GestionnaireUtilisateursComponent } from './gestionnaire-utilisateurs/g
 import { InscriptionComponent } from './inscription/inscription.component';
 import { FindbyidpatisserieComponent } from './findbyidpatisserie/findbyidpatisserie.component';
 import { NewpatisserieComponent } from './newpatisserie/newpatisserie.component';
-<<<<<<< Updated upstream
 import { PanierComponent } from './panier/panier.component';
 import { CommandeComponent } from './commande/commande.component';
-
-=======
 import { TestComponent } from './test/test.component';
->>>>>>> Stashed changes
+import { AproposComponent } from './apropos/apropos.component';
+import { ActualitesComponent } from './actualites/actualites.component';
+import { PresentationComponent } from './presentation/presentation.component';
+
 
 
 @NgModule({
@@ -32,18 +34,19 @@ import { TestComponent } from './test/test.component';
     CommandeComponent,
     FindbyidpatisserieComponent,
     NewpatisserieComponent,
-<<<<<<< Updated upstream
     PanierComponent,
     CommandeComponent,
-=======
     TestComponent,
->>>>>>> Stashed changes
+    AproposComponent,
+    ActualitesComponent,
+    PresentationComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent],

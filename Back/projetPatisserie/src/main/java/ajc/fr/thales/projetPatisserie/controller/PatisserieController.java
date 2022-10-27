@@ -26,7 +26,7 @@ import ajc.fr.thales.projetPatisserie.service.PatisserieService;
 
 @RestController
 @RequestMapping("/au-bonheur-des-gourmands")
-@CrossOrigin
+@CrossOrigin(origins ="*")
 public class PatisserieController {
 	
 	@Autowired
@@ -35,19 +35,21 @@ public class PatisserieController {
 	@Autowired
 	PatisserieService ps;
 	
+	@CrossOrigin
 	@GetMapping("/patisseries")
 	public List<Patisserie> getAll(){
 		return pr.findAll();
 		
 	}
 	
+	@CrossOrigin
 	@GetMapping("/patisserie/{id}")
 	public Patisserie getById(@PathVariable Long id) {
 		return ps.getById(id).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND,
 				"Le contact avec l'id [" + id + "] n'existe pas"));
 	}
 	
-	
+	@CrossOrigin
 	@PostMapping("patisserie/new")
 	@ResponseStatus(HttpStatus.CREATED)
 	public Patisserie createPatisserie(@RequestBody Patisserie p) {
@@ -58,7 +60,7 @@ public class PatisserieController {
 				
 	}
 
-	
+	@CrossOrigin
 	@PutMapping("/patisserie")
 	public Patisserie modifyPatisserie(@RequestBody Patisserie p) {
 		try {
@@ -71,6 +73,7 @@ public class PatisserieController {
 
 	}
 	
+	@CrossOrigin
 	@DeleteMapping("/patisserie/{id}")
 	@ResponseStatus(HttpStatus.ACCEPTED)
 	public void deletePatisserie(@PathVariable Long id) throws RelationException {

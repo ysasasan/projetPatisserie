@@ -10,3 +10,24 @@
 .breadcrumb-item+.breadcrumb-item::before {
     color: var(--light);
 }
+
+body{
+    margin:0;
+}
+
+
+button{
+    margin-top : 15px;
+    margin-left: auto;
+    margin-right : auto;
+    color:#594545;
+    background-color: #F8F9D7;
+    border-color: #594545;
+    border-radius: 0%;
+}
+
+button:hover{
+    color:#F8F9D7;
+    background-color: #594545;
+    border-color: #594545;
+}

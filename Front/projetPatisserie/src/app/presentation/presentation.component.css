@@ -1,0 +1,38 @@
+.container{
+    margin : 0;
+}
+
+.white-container{
+    margin:0;
+    background-color:white;
+    height:500px;
+}
+
+.green-container{
+    margin:0;
+    background-color: #A2B5BB;
+    height:300px;
+}
+
+.top-explanation{
+    background-color:white;
+    margin-left: auto;
+    margin-right:auto;
+    padding:150px 50px 70px 50px;
+    height: 500px;
+    width:800px;
+    text-align: center;
+    position:relative;
+    top: -700px;
+}
+
+.presentation{
+    height:500px;
+    padding-top: 25rem;
+    padding-bottom: 10rem;
+}
+
+
+.produits, .ingredients{
+    height:500px;
+}

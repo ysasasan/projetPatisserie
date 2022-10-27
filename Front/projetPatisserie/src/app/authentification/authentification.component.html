@@ -1,22 +1,22 @@
-<p>authentification works!</p>
 
 
-<div class="container">
+
+<div class="container green-container">
     <div class="row justify-content-center align-items-center">
         <div class="col-4">
             <div class="card">
                 <div class="card-body">
                     <form action="" autocomplete="off">
-                        <p>Connexion</p>
+                        <h3>Connexion</h3>
                         <div class="form-group">
                             <p>Adresse électronique :</p>
-                            <input type="email" class="form-control">
+                            <input type="email" class="form-control" name="inputMail" [(ngModel)]="mail">
                         </div>
                         <div class="form-group">
                             <p>Mot de passe :</p>
-                            <input type="password" class="form-control" >
+                            <input type="password" class="form-control"  name="inputMdp" [(ngModel)]="mdp">
                         </div>
-                        <button type="submit" id="sendlogin"  class="btn btn-primary">
+                        <button type="submit" id="sendlogin"  class="btn btn-primary" (click)="login()">
                             Se connecter</button>
                     </form>
                 </div>
@@ -24,3 +24,5 @@
         </div>
     </div>
 </div>
+
+{{message}}

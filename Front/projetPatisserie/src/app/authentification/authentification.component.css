@@ -1,0 +1,44 @@
+
+button{
+    margin-top : 15px;
+    margin-left: auto;
+    margin-right : auto;
+    color:#594545;
+    background-color: #F8F9D7;
+    border-color: #594545;
+    border-radius: 0%;
+}
+
+button:hover{
+    color:#F8F9D7;
+    background-color: #594545;
+    border-color: #594545;
+}
+
+
+.container{
+    color: #594545;
+}
+
+.form-group{
+    margin-top: 5px;
+    margin-bottom: 30px;
+}
+
+.card{
+    margin-top:3rem;
+    margin-bottom:3rem;
+}
+
+.passwordError{
+    color:red;
+}
+
+.passwordCorrect{
+    color:green;
+}
+
+.green-container{
+    margin:0 auto 0 auto;
+    background-color: #A2B5BB;
+}
