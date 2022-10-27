@@ -19,6 +19,7 @@ import { TestComponent } from './test/test.component';
 import { AproposComponent } from './apropos/apropos.component';
 import { ActualitesComponent } from './actualites/actualites.component';
 import { PresentationComponent } from './presentation/presentation.component';
+import { RecapitulatifComponent } from './recapitulatif/recapitulatif.component';
 
 
 @NgModule({
@@ -40,6 +41,7 @@ TestComponent,
 AproposComponent,
 ActualitesComponent,
 PresentationComponent,
+RecapitulatifComponent,
 
 ],
 imports: [
