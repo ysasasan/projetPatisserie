@@ -16,6 +16,7 @@ import { PresentationComponent } from './presentation/presentation.component';
 import { TestComponent } from './test/test.component';
 
 const routes: Routes = [
+
 {path: 'header', component: HeaderComponent},
 {path: 'footer', component: FooterComponent},
 {path: 'inscription', component: InscriptionComponent},
@@ -30,7 +31,6 @@ const routes: Routes = [
 {path: 'apropos', component: AproposComponent},
 {path: 'actualites', component: ActualitesComponent},
 {path: 'presentation', component: PresentationComponent}
-
 
 ];
 

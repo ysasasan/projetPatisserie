@@ -59,9 +59,10 @@ export class InscriptionComponent implements OnInit {
 
     console.log(body);
    
-    this.http.post("http://localhost:8081/au-bonheur-des-gourmands/utilisateur",body,{
+    this.http.post("http://localhost:8081/au-bonheur-des-gourmands/utilisateur/new",body,{
       headers: new HttpHeaders({
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
+        'Access-Control-Allow-Origin': '*',
       })
     }).subscribe(response => {
       this.message="Utilisateur créé"

@@ -22,6 +22,7 @@ import { PresentationComponent } from './presentation/presentation.component';
 
 
 @NgModule({
+
 declarations: [
 AppComponent,
 HeaderComponent,
@@ -51,5 +52,7 @@ FontAwesomeModule
 providers: [],
 bootstrap: [AppComponent],
 schemas: []
+
+ 
 })
 export class AppModule { }

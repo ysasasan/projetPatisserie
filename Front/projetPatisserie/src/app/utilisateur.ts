@@ -10,7 +10,7 @@ export class Utilisateur {
 	ville: string;
 	cp: string;
 	telephone: string;
-	role: string;
+	roles: Array<any>;
 }
 
 

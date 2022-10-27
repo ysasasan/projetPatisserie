@@ -17,6 +17,7 @@ export class CommandeComponent implements OnInit {
   prixLigne: number = 0
   total: number = 0
   ligne: Ligne = new Ligne();
+  message: string;
   
   constructor(private http: HttpClient) { }
 
@@ -50,6 +51,8 @@ export class CommandeComponent implements OnInit {
     this.ligne.setLigne(this.p,this.quantite,this.prixLigne)
     this.panier.push(this.ligne)
     this.total+=this.prixLigne
+    this.message="Ajouté au panier"
   }
+  
 
 }
