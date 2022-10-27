@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  client: Boolean = false;
+  client: Boolean = true;
   manager:Boolean = false;
   administrateur:Boolean = false;
 
