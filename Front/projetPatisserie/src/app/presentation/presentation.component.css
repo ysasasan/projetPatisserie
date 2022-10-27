@@ -1,3 +1,10 @@
+img{
+    height:20rem;
+    width:20rem;
+    margin-left:6rem;
+    padding-bottom:5rem;
+}
+
 .container{
     margin : 0;
 }
@@ -5,7 +12,6 @@
 .white-container{
     margin:0;
     background-color:white;
-    height:500px;
 }
 
 .green-container{
@@ -18,9 +24,8 @@
     background-color:white;
     margin-left: auto;
     margin-right:auto;
-    padding:150px 50px 70px 50px;
-    height: 500px;
-    width:800px;
+    padding:10rem 15rem 10rem 15rem;
+    width:80%;
     text-align: center;
     position:relative;
     top: -700px;
@@ -34,10 +39,28 @@
 
 
 .produits, .ingredients{
-    height:500px;
+    padding:5rem;
+    height:25rem;
 }
 
 .illustration{
     height:50px;
     width:50px;
+}
+
+.orange-container{
+    background-color:#FAD6A5;
+}
+
+.slide{
+    width:30rem;
+    margin-left:auto;
+    margin-right:auto;
+    padding-top:2rem;
+    padding-bottom:2rem;
+}
+
+.img-insta{
+    margin-left:auto;
+    margin-right:auto;
 }
