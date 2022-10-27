@@ -4,9 +4,7 @@ import { ActualitesComponent } from './actualites/actualites.component';
 import { AproposComponent } from './apropos/apropos.component';
 import { AuthentificationComponent } from './authentification/authentification.component';
 import { CarteComponent } from './carte/carte.component';
-
 import { CommandeComponent } from './commande/commande.component';
-
 import { FindbyidpatisserieComponent } from './findbyidpatisserie/findbyidpatisserie.component';
 import { FooterComponent } from './footer/footer.component';
 import { GestionnaireUtilisateursComponent } from './gestionnaire-utilisateurs/gestionnaire-utilisateurs.component';
@@ -27,7 +25,6 @@ const routes: Routes = [
   {path: 'findbyidpatisserie/:id', component: FindbyidpatisserieComponent},
   {path: 'newpatisserie', component: NewpatisserieComponent},
   {path: 'carte', component: CarteComponent},
-
   {path: 'panier', component: PanierComponent},
   {path: 'test', component: TestComponent},
   {path: 'apropos', component: AproposComponent},

@@ -16,7 +16,7 @@
             <li class="nav-item active">
                 <a class="nav-link" href="http://localhost:4200/carte">Pâtisseries</a>
             </li>
-            <li *ngIf="client==true" class="nav-item active">
+            <li *ngIf="connexion" class="nav-item active">
               <a class="nav-link" href="http://localhost:4200/commande">Commander</a>
             </li>
             <!-- <li class="nav-item">
@@ -30,7 +30,7 @@
           </form> -->
         </div>
 
-        <div *ngIf="manager==true" class="collapse navbar-collapse manager" id="navbarSupportedContent">
+        <div *ngIf="manager" class="collapse navbar-collapse manager" id="navbarSupportedContent">
           <i class="fa-solid fa-people-roof"></i>
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
@@ -43,7 +43,7 @@
         </div>
 
         
-        <div *ngIf="administrateur==true" class="collapse navbar-collapse admin" id="navbarSupportedContent">
+        <div *ngIf="administrateur" class="collapse navbar-collapse admin" id="navbarSupportedContent">
           <i class="fa-solid fa-screwdriver-wrench"></i>
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
@@ -58,9 +58,6 @@
           </ul>
         </div>
 
-
-       
-
         <!-- <div class="d-md-flex d-block flex-row mx-md-auto mx-0" id="navbarSupportedContent">
               <a class="navbar-brand mx-auto" href="http://localhost:4200"> B / G </a>          
         </div> -->
@@ -74,8 +71,11 @@
             <li class="nav-item">
               <a class="nav-link" href="http://localhost:4200/inscription">S'inscrire</a>
           </li>	
-          <li class="nav-item">
-              <a class="nav-link" href="http://localhost:4200/authentification"><i class="fa-solid fa-circle-user"></i> Se connecter</a>
+          <li *ngIf="!connexion" class="nav-item">
+              <a class="nav-link" href="http://localhost:4200/authentification"><i class="fa-solid fa-circle-user"></i>Se connecter</a>
+          </li>	
+          <li *ngIf="connexion" class="nav-item">
+            <a type="button" (click)="quit()" class="nav-link" href="http://localhost:4200/presentation"><i class="fa-solid fa-right-from-bracket"></i> Se déconnecter</a>
           </li>			
           </ul>		  
         </div>
