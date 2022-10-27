@@ -70,6 +70,11 @@ export class CommandeComponent implements OnInit {
   validate(){
     sessionStorage.setItem("panier",JSON.stringify(this.panier))
   }
+
+  edit(i:any){
+    this.total-=this.panier[i].prix
+    delete(this.panier[i])
+  }
   
 
 }
