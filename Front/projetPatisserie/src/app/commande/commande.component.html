@@ -38,7 +38,7 @@
         <div class="row">
             <div class="col-lg-4 col-md-6 col-sm-10 offset-md-0 offset-sm-1" *ngFor="let pist of  MyList ">
                 <div class="card">
-                    <img class="card-img-top" src="/assets/img/{{pist.image }}" class="card-img-top" alt="...">
+                    <img class="card-img-top" src="/assets/img/{{pist.image}}" class="card-img-top" alt="image de {{pist.image}}">
                     <div class="card-body">
                         <h5 class="card-title">           
                             <a>
@@ -108,19 +108,17 @@
 				</div>
 
 				<div class="modal-body">
-					<h3>Ma commande ({{panier.length}})</h3>
+					<h3>Ma commande ({{lignes.length}})</h3>
 
                     <div>
-                        <table>
-                            
+                        <table  class="table table-striped">
                             <tr>
                                 <th>Quantite</th>
                                 <th>Patisserie</th>
                                 <th>Prix</th>
                             </tr>
 
-
-                            <tr *ngFor="let ligne of panier">
+                            <tr *ngFor="let ligne of lignes">
                                 <td>{{ligne.quantite}}</td>
                                 <td>{{ligne.patisserie.nom}}</td>
                                 <td>{{ligne.prix}}</td>
@@ -132,7 +130,7 @@
                             </tr>
                         </table>
 
-                        <button class="btn btn-primary">Valider votre commande</button>
+                        <button class="btn btn-primary" (click)="validate()" [routerLink]="['/recapitulatif']">Valider votre commande</button>
                     
                         
                     </div>

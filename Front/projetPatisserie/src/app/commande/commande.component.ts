@@ -12,7 +12,7 @@ export class CommandeComponent implements OnInit {
 
   MyList: any
   p: Patisserie = new Patisserie()
-  panier: Array<Ligne> = new Array()
+  lignes = []
   quantite: number = 0
   prixLigne: number = 0
   total: number = 0
@@ -49,10 +49,13 @@ export class CommandeComponent implements OnInit {
   addPanier(){
     this.prixLigne=this.quantite*this.p.prix
     this.ligne.setLigne(this.p,this.quantite,this.prixLigne)
-    this.panier.push(this.ligne)
+    this.lignes.push(this.ligne)
     this.total+=this.prixLigne
     this.message="Ajouté au panier"
   }
   
+  validate(){
+
+  }
 
 }
