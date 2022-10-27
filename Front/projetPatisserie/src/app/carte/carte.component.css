@@ -1,5 +1,15 @@
+div{
+    margin: 0;
+    padding: 0;
+}
+
+
+
+
 .price{
-    margin-left: 5px;
+   
+    width: 99px;
+    
 }
 
 .card-body{
@@ -7,99 +17,28 @@
 }
 
 .products{
-    margin-left: 10px;
+    
+    width: 70%;
+    padding: 10px;
+    
+    
+}
+.card{
+    width: 300px;
+    height: 330px;
+    border: none;
+}
+.card-img-top{
+    width: 295px;
+    height: 200px;
+    border-radius: 10px;
+}
+.text{
+    display: inline-block;
 }
 
-@media(min-width:1200px){
-   
-    .text{
-        display: inline-block;
-    }
-    #products{
-        width: 70%;
-        padding: 10px;
-        margin: 0;
-        float: right;
-        
-    }
-    .card{
-        width: 300px;
-        height: 330px;
-        border: none;
-    }
-    .card-img-top{
-        width: 295px;
-        height: 200px;
-        border-radius: 10px;
-    }
-   
-}
-@media(min-width:992px) and (max-width:1199px){
-    
-    .text{
-        display: none;
-    }
-   
-    #products{
-        width: 70%;
-        padding: 10px;
-        margin: 0;
-        float: right;
-    }
-    .card{
-        width: 200px;
-        height: 330px;
-        border: none;
-    }
-    .card-img-top{
-        width: 200px;
-        height: 200px;
-        border-radius: 10px;
-    }
-   
-   
-    .price{
-        width: 99px;
-        margin-right: 3px;
-    }
-    
-}
-@media(min-width:768px) and (max-width:991px){
-    
-   
-    .text{
-        display: none;
-    }
-  
-    #products{
-        width: 65%;
-        padding: 10px;
-        margin-left: 100%;
-        float: right;
-    }
-    .card{
-        border: none;
-    }
-    
-}
-@media(min-width:576px) and (max-width:767px){
-    .text{
-        display: none;
-    }
-   
-    #products{
-        width: 60%;
-        padding: 10px;
-        margin: 0;
-        float: right;
-        
-    }
-    .card{
-        border: none;
-    }
-   
-   
-}
+
+
 
 
 .img_modal{
