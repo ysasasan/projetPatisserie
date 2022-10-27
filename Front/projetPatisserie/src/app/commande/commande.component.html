@@ -117,7 +117,6 @@
                                 <th>Patisserie</th>
                                 <th>Prix</th>
                             </tr>
-
                             <tr *ngFor="let ligne of panier">
                                 <td>{{ligne.quantite}}</td>
                                 <td>{{ligne.patisserie.nom}}</td>
@@ -130,7 +129,7 @@
                             </tr>
                         </table>
 
-                        <button class="btn btn-primary" [routerLink]="['/recapitulatif']">Valider votre commande</button>
+                        <button class="btn btn-primary" (click)="validate()" [routerLink]="['/recapitulatif']">Valider votre commande</button>
                     
                         
                     </div>

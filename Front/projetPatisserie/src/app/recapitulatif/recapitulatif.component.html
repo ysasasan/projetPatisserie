@@ -1,1 +1,19 @@
-<p>recapitulatif works!</p>
+<div>
+    <table class="table table-striped">
+        <thead>
+            <h3>Ma commande ({{lst.length}})</h3>
+          <tr>
+            <th scope="col">Quantite</th>
+            <th scope="col">Patisserie</th>
+            <th scope="col">Prix</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let ligne of lst">
+            <td>{{ligne.quantite}}</td>
+            <td>{{ligne.patisserie.nom}}</td>
+            <td>{{ligne.prix}} €</td>
+          </tr>
+        </tbody>
+      </table>
+</div>

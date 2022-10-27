@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RecapitulatifComponent implements OnInit {
 
+  lst: any
+
   constructor() { }
 
   ngOnInit(): void {
+    this.lst=JSON.parse(sessionStorage.getItem("panier"))
+    // for (var i=0;i<this.lst.length;i++) {
+    //   alert(this.lst[i].Id);
+   }
   }
 
-}
+

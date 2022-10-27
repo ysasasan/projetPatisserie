@@ -66,6 +66,10 @@ export class CommandeComponent implements OnInit {
 
     this.message="Ajouté au panier"
   }
+
+  validate(){
+    sessionStorage.setItem("panier",JSON.stringify(this.panier))
+  }
   
 
 }

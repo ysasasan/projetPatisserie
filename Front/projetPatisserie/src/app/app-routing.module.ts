@@ -13,6 +13,7 @@ import { InscriptionComponent } from './inscription/inscription.component';
 import { NewpatisserieComponent } from './newpatisserie/newpatisserie.component';
 import { PanierComponent } from './panier/panier.component';
 import { PresentationComponent } from './presentation/presentation.component';
+import { RecapitulatifComponent } from './recapitulatif/recapitulatif.component';
 import { TestComponent } from './test/test.component';
 
 const routes: Routes = [
@@ -30,7 +31,8 @@ const routes: Routes = [
 {path: 'test', component: TestComponent},
 {path: 'apropos', component: AproposComponent},
 {path: 'actualites', component: ActualitesComponent},
-{path: 'presentation', component: PresentationComponent}
+{path: 'presentation', component: PresentationComponent},
+{path: 'recapitulatif', component: RecapitulatifComponent}
 
 ];
 
