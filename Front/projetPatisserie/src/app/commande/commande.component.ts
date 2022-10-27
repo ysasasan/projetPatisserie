@@ -16,7 +16,7 @@ export class CommandeComponent implements OnInit {
   quantite: number = 0
   prixLigne: number = 0
   total: number = 0
-  ligne: Ligne = new Ligne();
+  // ligne: Ligne = new Ligne();
   message: string;
   
   constructor(private http: HttpClient) { }
@@ -45,12 +45,25 @@ export class CommandeComponent implements OnInit {
     this.p.description=description
     this.p.prix=prix
   }
+
   
   addPanier(){
-    this.prixLigne=this.quantite*this.p.prix
-    this.ligne.setLigne(this.p,this.quantite,this.prixLigne)
-    this.panier.push(this.ligne)
-    this.total+=this.prixLigne
+
+    let ligne: Ligne = new Ligne();
+    let patisserie: Patisserie = new Patisserie()
+    patisserie.nom=this.p.nom
+    // ligne.patisserie.nom=this.p.nom
+
+    ligne.patisserie=patisserie
+    ligne.quantite=this.quantite
+    ligne.prix=this.quantite*this.p.prix
+
+    // this.prixLigne=this.quantite*this.p.prix
+    // ligne.setLigne(this.p,this.quantite,this.prixLigne)
+    this.panier.push(ligne)
+
+    this.total+=ligne.prix
+
     this.message="Ajouté au panier"
   }
   
