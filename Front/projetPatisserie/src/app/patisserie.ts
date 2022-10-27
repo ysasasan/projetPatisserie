@@ -6,4 +6,9 @@ export class Patisserie {
     infos: string
     nom: string
     prix: number
+    qteStock: number
+
+    constructor(){}
 }
+
+

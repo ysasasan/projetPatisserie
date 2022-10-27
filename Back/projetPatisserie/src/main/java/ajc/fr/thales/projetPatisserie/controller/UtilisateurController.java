@@ -25,17 +25,19 @@ import ajc.fr.thales.projetPatisserie.service.UtilisateurService;
 
 @RestController
 @RequestMapping("/au-bonheur-des-gourmands")
-@CrossOrigin
+@CrossOrigin(origins ="*")
 public class UtilisateurController {
 	
 	@Autowired
 	UtilisateurService service;
 	
+	@CrossOrigin
 	@GetMapping("/utilisateurs")
 	public List<Utilisateur> getAllUtilisateurs() {
 		return service.findAll();
 	}
 	
+	@CrossOrigin
 	@GetMapping("/utilisateur/{email}/{mdp}")
 	public Utilisateur getByMailPass(@PathVariable String email, @PathVariable String mdp) {
 		if(Objects.isNull(email))
@@ -45,7 +47,7 @@ public class UtilisateurController {
 		return service.getByMailPass(email, mdp);
 	}
 	
-
+	@CrossOrigin
 	@GetMapping("/utilisateur/connexion")
 	public Utilisateur getByHeaderIds(@RequestHeader String email, @RequestHeader String mdp) {
 		if(Objects.isNull(email))
@@ -55,6 +57,7 @@ public class UtilisateurController {
 		return service.getByMailPass(email, mdp);
 	}
 	
+	@CrossOrigin
 	@GetMapping("/utilisateur/{id}")
 	public Optional<Utilisateur> getById(@PathVariable Long id) {
 		if(Objects.isNull(id))
@@ -69,6 +72,7 @@ public class UtilisateurController {
 //		return service.getById(id);
 //	}
 	
+	@CrossOrigin
 	@PostMapping("/utilisateur/new")
 	@ResponseStatus(HttpStatus.CREATED)
 	public Utilisateur createUser(@RequestBody Utilisateur u) {
@@ -96,6 +100,7 @@ public class UtilisateurController {
 		//return null;
 //	}
 	
+	@CrossOrigin
 	@PutMapping("/utilisateur")
 	public Utilisateur updateUtilisateur(@RequestBody Utilisateur u) throws EmptyIdException {
 		if(Objects.isNull(u.getId()))
@@ -103,6 +108,7 @@ public class UtilisateurController {
 		return service.updateUser(u);
 	}
 	
+	@CrossOrigin
 	@DeleteMapping("/utilisateur/{id}")
 	public void deleteUtilisateur(@PathVariable Long id) {
 		if(Objects.isNull(id))

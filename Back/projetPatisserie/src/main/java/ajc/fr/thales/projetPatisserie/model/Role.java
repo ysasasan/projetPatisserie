@@ -1,5 +1,13 @@
 package ajc.fr.thales.projetPatisserie.model;
 
 public enum Role {
-	CLIENT, ADMINISTRATEUR
+	ROLE_CLIENT, ROLE_MANAGER, ROLE_ADMINISTRATEUR;
+	
+	@Override
+    public String toString() {
+        return name().toLowerCase();
+    }
+	
 }
+
+

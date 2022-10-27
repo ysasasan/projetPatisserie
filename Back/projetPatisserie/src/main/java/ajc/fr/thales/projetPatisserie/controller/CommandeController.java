@@ -25,17 +25,19 @@ import ajc.fr.thales.projetPatisserie.service.CommandeService;
 
 @RestController
 @RequestMapping("/au-bonheur-des-gourmands")
-@CrossOrigin
+@CrossOrigin(origins ="*")
 public class CommandeController {
 	
 	@Autowired
 	CommandeService service;
 	
+	@CrossOrigin
 	@GetMapping("/commandes")
 	public List<Commande> getProduits() {
 		return service.findAll();
 	}
 
+	@CrossOrigin
 	@GetMapping("/commande/{id}")
 	public Optional<Commande> getById(@PathVariable Long id) {
 		if (Objects.isNull(id))
@@ -43,6 +45,7 @@ public class CommandeController {
 		return service.getById(id);
 	}
 
+	@CrossOrigin
 	@PostMapping("/commande/new")
 	@ResponseStatus(HttpStatus.CREATED)
 	public Commande createCommande(@RequestBody Commande c) throws RelationException {
@@ -62,6 +65,7 @@ public class CommandeController {
 		return service.create(c);
 	}
 
+	@CrossOrigin
 	@PutMapping("commande/")
 	public Commande updateCommande(@RequestBody Commande c) throws EmptyIdException {
 		if (Objects.isNull(c.getId()))
@@ -71,6 +75,7 @@ public class CommandeController {
 	}
 	
 	@PutMapping("commande/{id}/confirm")
+	@CrossOrigin
 	public Commande confirmCommandes(@PathVariable Long id) throws Exception {
 		if (Objects.isNull(id))
 			throw new ResponseStatusException(HttpStatus.BAD_REQUEST);
@@ -82,6 +87,7 @@ public class CommandeController {
 
 	@DeleteMapping("/commande/{id}")
 	@ResponseStatus(HttpStatus.ACCEPTED)
+	@CrossOrigin
 	public void deleteCommande(@PathVariable Long id) {
 		if (Objects.isNull(id))
 			throw new ResponseStatusException(HttpStatus.BAD_REQUEST,"Id de commande non renseigné");
@@ -90,6 +96,7 @@ public class CommandeController {
 	
 	
 	@GetMapping("commandes/not-confirmed")
+	@CrossOrigin
 	public List<Commande> getCommandesNotConfirmed() {
 	return service.getCommandesNotConfirmed();
 	}

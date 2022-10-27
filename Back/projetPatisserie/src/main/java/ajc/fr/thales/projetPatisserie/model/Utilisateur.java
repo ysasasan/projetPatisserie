@@ -5,13 +5,14 @@ import javax.persistence.GeneratedValue;
 
 import java.util.List;
 
-import javax.persistence.CascadeType;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 import javax.persistence.Version;
+
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
@@ -24,6 +25,7 @@ public class Utilisateur {
 	private Long id;
 	private String nom;
 	private String prenom;
+	private String societe;
 	private String email;
 	private String mdp;
 	private String numeroRue;
@@ -31,7 +33,10 @@ public class Utilisateur {
 	private String ville;
 	private String cp;
 	private String telephone;
-	private String role;
+	
+	@ElementCollection(targetClass=Role.class)
+	@Enumerated(EnumType.ORDINAL)
+	private List<Role> roles;
 
 	@Version
 	private Integer version;
@@ -62,6 +67,14 @@ public class Utilisateur {
 
 	public void setPrenom(String prenom) {
 		this.prenom = prenom;
+	}
+
+	public String getSociete() {
+		return societe;
+	}
+
+	public void setSociete(String societe) {
+		this.societe = societe;
 	}
 
 	public String getEmail() {
@@ -120,12 +133,12 @@ public class Utilisateur {
 		this.telephone = telephone;
 	}
 
-	public String getRole() {
-		return role;
+	public List<Role> getRoles() {
+		return roles;
 	}
 
-	public void setRole(String role) {
-		this.role = role;
+	public void setRoles(List<Role> roles) {
+		this.roles = roles;
 	}
 
 	public Integer getVersion() {
@@ -136,10 +149,23 @@ public class Utilisateur {
 		this.version = version;
 	}
 
-	public Utilisateur(String nom, String prenom, String email, String mdp, String numeroRue, String rue, String ville,
-			String cp, String telephone, String role) {
+	public List<Commande> getCommandes() {
+		return commandes;
+	}
+
+	public void setCommandes(List<Commande> commandes) {
+		this.commandes = commandes;
+	}
+
+	public Utilisateur() {
+	}
+
+
+	public Utilisateur(String nom, String prenom, String societe, String email, String mdp, String numeroRue, String rue, String ville,
+			String cp, String telephone, List<Role> roles) {
 		this.nom = nom;
 		this.prenom = prenom;
+		this.societe = societe;
 		this.email = email;
 		this.mdp = mdp;
 		this.numeroRue = numeroRue;
@@ -147,30 +173,30 @@ public class Utilisateur {
 		this.ville = ville;
 		this.cp = cp;
 		this.telephone = telephone;
-		this.role = role;
+		this.roles = roles;
 	}
-
-	public Utilisateur() {
-	}
-
-	public Utilisateur(Utilisateur user) {
-		this.nom = user.nom;
-		this.prenom = user.prenom;
-		this.email = user.email;
-		this.mdp = user.mdp;
-		this.numeroRue = user.numeroRue;
-		this.rue = user.rue;
-		this.ville = user.ville;
-		this.cp = user.cp;
-		this.telephone = user.telephone;
-		this.role = user.role;
+	
+	public Utilisateur(Utilisateur u) {
+		this.nom = u.nom;
+		this.prenom = u.prenom;
+		this.societe = u.societe;
+		this.email = u.email;
+		this.mdp = u.mdp;
+		this.numeroRue = u.numeroRue;
+		this.rue = u.rue;
+		this.ville = u.ville;
+		this.cp = u.cp;
+		this.telephone = u.telephone;
+		this.roles = u.roles;
 	}
 
 	@Override
 	public String toString() {
-		return "Utilisateur [id=" + id + ", nom=" + nom + ", prenom=" + prenom + ", email=" + email + ", mdp=" + mdp
-				+ ", numeroRue=" + numeroRue + ", rue=" + rue + ", ville=" + ville + ", cp=" + cp + ", telephone="
-				+ telephone + ", role=" + role + ", version=" + version + "]";
+		return "Utilisateur [id=" + id + ", nom=" + nom + ", prenom=" + prenom + ", societe=" + societe + ", email="
+				+ email + ", mdp=" + mdp + ", numeroRue=" + numeroRue + ", rue=" + rue + ", ville=" + ville + ", cp="
+				+ cp + ", telephone=" + telephone + ", roles=" + roles + ", version=" + version + ", commandes="
+				+ commandes + "]";
 	}
+	
 
 }

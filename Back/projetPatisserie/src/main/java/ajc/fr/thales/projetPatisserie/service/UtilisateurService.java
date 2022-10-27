@@ -1,5 +1,6 @@
 package ajc.fr.thales.projetPatisserie.service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
@@ -9,6 +10,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
+import ajc.fr.thales.projetPatisserie.model.Role;
 import ajc.fr.thales.projetPatisserie.model.Utilisateur;
 import ajc.fr.thales.projetPatisserie.model.exception.EmptyIdException;
 import ajc.fr.thales.projetPatisserie.repository.UtilisateurRepository;
@@ -29,6 +31,9 @@ public class UtilisateurService {
 
 	public Utilisateur createUser(Utilisateur u) {
 		Utilisateur user = new Utilisateur(u);
+		List<Role> roles = new ArrayList<>();
+		roles.add(Role.ROLE_CLIENT);
+		user.setRoles(roles);
 		return repo.save(user);
 	}
 	
@@ -65,7 +70,8 @@ public class UtilisateurService {
 		verifiedUser.setCp(user.getCp());
 		verifiedUser.setVille(user.getVille());
 		verifiedUser.setTelephone(user.getTelephone());
-		verifiedUser.setRole(user.getRole());
+		verifiedUser.setSociete(user.getSociete());
+		verifiedUser.setRoles(user.getRoles());
 		return repo.save(verifiedUser);
 	}
 
