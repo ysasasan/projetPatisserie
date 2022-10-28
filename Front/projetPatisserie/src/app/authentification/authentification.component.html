@@ -14,7 +14,7 @@
                             <p>Mot de passe :</p>
                             <input type="password" class="form-control"  name="inputMdp" [(ngModel)]="mdp">
                         </div>
-                        <button type="submit" id="sendlogin"  class="btn btn-primary" (click)="login()" routerLink="/commande">
+                        <button type="submit" id="sendlogin"  class="btn btn-primary" (click)="login()" [routerLink]="['/commande']">
                             Se connecter</button>
                     </form>
                 </div>

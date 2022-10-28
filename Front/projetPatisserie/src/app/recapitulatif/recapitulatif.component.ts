@@ -18,9 +18,9 @@ export class RecapitulatifComponent implements OnInit {
   constructor(private http:HttpClient) { }
 
 
-  ngOnInit(): void {
+  async ngOnInit() {
     this.lst=JSON.parse(sessionStorage.getItem("panier"))
-    this.lst=JSON.parse(sessionStorage.getItem("utilisateur"))
+    this.user=JSON.parse(sessionStorage.getItem("utilisateur"))
     // for (var i=0;i<this.lst.length;i++) {
     //   alert(this.lst[i].Id);
    }
@@ -41,7 +41,7 @@ export class RecapitulatifComponent implements OnInit {
      },
  
        err => {
-        
+
          this.message="Erreur de creation article"
        });
    }

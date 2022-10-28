@@ -1,0 +1,33 @@
+.page-container{
+    margin-top:5rem; 
+    margin-bottom: 15rem;
+}
+
+.identite{
+    margin-top:3rem;
+}
+
+.nb-article{
+    margin-left:30rem; 
+    margin-bottom: 5rem;
+}
+
+
+.btn-recap{
+    margin-left:auto;
+    margin-right:auto;
+    margin-top:2rem;
+    height:4rem;
+    border-radius: 0%;
+    background-color: #A2B5BB;
+    border-color: #A2B5BB;
+    color:white;
+}
+
+.btn-recap:hover{
+    opacity:50%;
+}
+
+.text-id{
+    font-weight:bold;
+}

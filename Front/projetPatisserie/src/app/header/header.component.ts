@@ -43,17 +43,14 @@ export class HeaderComponent implements OnInit {
 
   quit(){
 
-    console.log("hello")
+    sessionStorage.clear();
+
     this.client= false;
     this.manager=false;
     this.administrateur=false;
     this.connexion=false;
-    sessionStorage.clear();
-
-
-    console.log(this.client, this.manager, this.administrateur, this.connexion, sessionStorage);
+    
   }
-
 
 
 }

@@ -1,11 +1,14 @@
-<div class="container">
+<div class="container page-container">
 
   <h3>Votre commande</h3>
-  <div>Nombre de douceurs dans votre panier : ({{lst.length}})</div>
+  <div class="container identite">
+    <span class="text-id">Nom :</span> {{user.nom}}
+    <span class="text-id">Prénom :</span> {{user.prenom}}
+  </div>
+  <div class="container nb-article">Nombre de douceurs dans votre panier: <span class="text-id">{{lst.length}}</span> </div>
 
     <table class="table table-striped">
-        <thead>
-            
+        <thead>           
           <tr>
             <th scope="col">Quantite</th>
             <th scope="col">Patisserie</th>
@@ -21,6 +24,8 @@
         </tbody>
       </table>
 
-      <button id="validateBasket" class="btn btn-modal-panier" (click)="buy()" [routerLink]="['/final']">Valider votre commande</button>
-
+      <div class="container text-center">
+        <button id="validateBasket" class="btn btn-recap" (click)="buy()" [routerLink]="['/final']">Valider votre commande</button>
+      </div>
+     
 </div>

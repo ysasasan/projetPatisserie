@@ -16,7 +16,7 @@ export class FinalComponent implements OnInit {
     this.panier=sessionStorage.getItem("panier")
 
     // delete(this.panier[i])
-
+    
   }
 
 }

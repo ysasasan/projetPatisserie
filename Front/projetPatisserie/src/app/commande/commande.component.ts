@@ -98,6 +98,9 @@ export class CommandeComponent implements OnInit {
 
   validate(){
     sessionStorage.setItem("panier",JSON.stringify(this.panier))
+    sessionStorage.setItem("total",JSON.stringify(this.total))
+
+    console.log(sessionStorage.getItem("panier"))
     this.modalClosed = true;
   }
 

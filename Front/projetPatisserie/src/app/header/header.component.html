@@ -1,91 +1,95 @@
 
 <header>
-    <!-- Navbar -->
-    <nav class="nav navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container">
-           
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-      
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            <!-- <li class="nav-item active">
-              <a class="nav-link" href="http://localhost:4200/apropos">A propos</a>
-            </li> -->
-            <li class="nav-item active">
-                <a class="nav-link" href="http://localhost:4200/carte">Pâtisseries</a>
-            </li>
-            <li *ngIf="client && connexion" class="nav-item active">
-            <li class="nav-item active">
-              <a class="nav-link client" href="http://localhost:4200/commande">Commander</a>
-            </li>
-            <!-- <li class="nav-item">
-              <a class="nav-link" href="http://localhost:4200/actualites">Actualités</a>
-            </li>        -->
-          </ul>
+<div class="container">
+   <!-- Navbar -->
+   <nav class="nav navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+       
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <!-- <li class="nav-item active">
+          <a class="nav-link" href="http://localhost:4200/apropos">A propos</a>
+        </li> -->
+        <li class="nav-item active">
+            <a class="nav-link" href="http://localhost:4200/carte">Pâtisseries</a>
+        </li>
+        <li *ngIf="client && connexion" class="nav-item active">
+        <li class="nav-item active">
+          <a class="nav-link client" href="http://localhost:4200/commande">Commander</a>
+        </li>
+        <!-- <li class="nav-item">
+          <a class="nav-link" href="http://localhost:4200/actualites">Actualités</a>
+        </li>        -->
+      </ul>
 
-          <!-- <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-          </form> -->
-        </div>
+      <!-- <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form> -->
+    </div>
 
-        <div *ngIf="manager" class="collapse navbar-collapse manager" id="navbarSupportedContent">
-          <i class="fa-solid fa-people-roof"></i>
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link manager" href="http://localhost:4200/stats">Statististiques</a>
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link manager" href="http://localhost:4200/stock">Stock</a>
-            </li>     
-          </ul>
-        </div>
+    <div *ngIf="manager" class="collapse navbar-collapse manager" id="navbarSupportedContent">
+      <i class="fa-solid fa-people-roof"></i>
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link manager" href="http://localhost:4200/stats">Statististiques</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link manager" href="http://localhost:4200/stock">Stock</a>
+        </li>     
+      </ul>
+    </div>
 
-        
-        <div *ngIf="administrateur" class="collapse navbar-collapse admin" id="navbarSupportedContent">
-          <i class="fa-solid fa-screwdriver-wrench"></i>
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link admin" href="http://localhost:4200/utilisateurs">Gestion des utilisateurs</a>
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link admin" href="http://localhost:4200/patisseries">Gestion patisseries</a>
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link admin" href="http://localhost:4200/commandes">Gestion commandes</a>
-            </li>     
-          </ul>
-        </div>
+    
+    <div *ngIf="administrateur" class="collapse navbar-collapse admin" id="navbarSupportedContent">
+      <i class="fa-solid fa-screwdriver-wrench"></i>
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link admin" href="http://localhost:4200/utilisateurs">Gestion des utilisateurs</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link admin" href="http://localhost:4200/patisseries">Gestion patisseries</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link admin" href="http://localhost:4200/commandes">Gestion commandes</a>
+        </li>     
+      </ul>
+    </div>
 
-        <!-- <div class="d-md-flex d-block flex-row mx-md-auto mx-0" id="navbarSupportedContent">
-              <a class="navbar-brand mx-auto" href="http://localhost:4200"> B / G </a>          
-        </div> -->
+    <!-- <div class="d-md-flex d-block flex-row mx-md-auto mx-0" id="navbarSupportedContent">
+          <a class="navbar-brand mx-auto" href="http://localhost:4200"> B / G </a>          
+    </div> -->
 
-        <div class="navbar-nav">
-          <a class="navbar-brand " href="http://localhost:4200/presentation"><span class="brand-letter">B</span> / <span class="brand-letter">G</span> </a>
-        </div>
+    <div class="navbar-nav">
+      <a class="navbar-brand " href="http://localhost:4200/presentation"><span class="brand-letter">B</span> / <span class="brand-letter">G</span> </a>
+    </div>
 
-        <div class="cnavbar navbar-expand-lg bg-light" id="navbarSupportedContent">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="http://localhost:4200/inscription">S'inscrire</a>
-          </li>	
-          <!-- <li *ngIf="!connexion" class="nav-item"> -->
-          <li class="nav-item">
-              <a class="nav-link" href="http://localhost:4200/authentification"><i class="fa-solid fa-circle-user"></i> Se connecter</a>
-          </li>	
-          <!-- <li *ngIf="connexion" class="nav-item"> -->
-          <li class="nav-item">
-            <a type="button" (click)="quit()" class="nav-link" href="http://localhost:4200/presentation"><i class="fa-solid fa-right-from-bracket"></i> Se déconnecter</a>
-          </li>			
-          </ul>		  
-        </div>
+    <div class="cnavbar navbar-expand-lg bg-light" id="navbarSupportedContent">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="http://localhost:4200/inscription">S'inscrire</a>
+      </li>	
+      <li *ngIf="!connexion" class="nav-item">
+      <!-- <li class="nav-item"> -->
+          <a class="nav-link" href="http://localhost:4200/authentification"><i class="fa-solid fa-circle-user"></i> Se connecter</a>
+      </li>	
+      <li *ngIf="connexion" class="nav-item">
+      <!-- <li class="nav-item"> -->
+        <a type="button" (click)="quit()" class="nav-link" href="http://localhost:4200/presentation"><i class="fa-solid fa-right-from-bracket"></i> Se déconnecter</a>
+      </li>			
+      </ul>		  
+    </div>
 
-    </div>  
-    </nav>
-    <!-- Navbar -->
+</div>  
+</nav>
+<!-- Navbar -->
+</div>
+
+   
   
     <!-- Background image -->
     <div class="p-5 text-center bg-image">

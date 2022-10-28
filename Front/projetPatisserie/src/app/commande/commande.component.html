@@ -36,7 +36,7 @@
             <!-- <div class="form-group">
                 <input type="checkbox" class="check" id="checkAll" (click)="tousFilter">
                 <label for="mignardise">Tous</label>
-            </div>    -->
+            </div> -->
         </form>
     </div>
 
@@ -167,7 +167,7 @@
                                 <th>Prix</th>
                                 <th>Suppr</th>
                             </tr>
-                            <tr *ngFor="let ligne of panier; let i = index">true
+                            <tr *ngFor="let ligne of panier; let i = index">
                                 <!-- <td><input type="number" [(ngModel)]="ligne.quantite">{{ligne.quantite}}</td> -->
                                 <td><input class="input-ligne form-control" type="number" id="quantité" name="quantiteLigne"
                                   min="1" max={{p.qteStock}} [(ngModel)]="ligne.quantite"></td>

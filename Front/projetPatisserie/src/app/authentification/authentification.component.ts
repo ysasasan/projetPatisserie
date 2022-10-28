@@ -28,7 +28,8 @@ export class AuthentificationComponent implements OnInit {
       (response)=>{
         this.user=response;
         this.message=JSON.stringify(this.user);
-        sessionStorage.setItem("utilisateur",this.message);
+        console.log(JSON.stringify(this.user));
+        sessionStorage.setItem("utilisateur",JSON.stringify(this.user));
 
       },
       (error)=>{
