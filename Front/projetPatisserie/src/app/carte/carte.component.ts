@@ -12,6 +12,9 @@ import { Patisserie } from '../patisserie';
 export class CarteComponent implements OnInit {
 
   MyList: any
+  tartes: any
+  gateaux: Array<Patisserie>
+  miniardises: Array<Patisserie>
   p: Patisserie = new Patisserie()
   panier: Array<Ligne> = new Array()
   quantite: number = 0
@@ -26,6 +29,9 @@ export class CarteComponent implements OnInit {
       (response) => {
       
         this.MyList=response;
+        this.tartes = this.MyList.filter(patisserie => patisserie.categorie==='tarte');
+        this.gateaux = this.MyList.filter(patisserie => patisserie.categorie==='gateau');
+        this.miniardises = this.MyList.filter(patisserie => patisserie.categorie==='miniardise');
       },
       (err) => {
          console.log("*************KO")

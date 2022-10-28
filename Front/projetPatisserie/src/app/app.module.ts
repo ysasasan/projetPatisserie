@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule} from '@angular/common/http';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AppRoutingModule } from './app-routing.module';
@@ -20,6 +20,7 @@ import { AproposComponent } from './apropos/apropos.component';
 import { ActualitesComponent } from './actualites/actualites.component';
 import { PresentationComponent } from './presentation/presentation.component';
 import { RecapitulatifComponent } from './recapitulatif/recapitulatif.component';
+import { FinalComponent } from './final/final.component';
 
 
 @NgModule({
@@ -42,6 +43,7 @@ AproposComponent,
 ActualitesComponent,
 PresentationComponent,
 RecapitulatifComponent,
+FinalComponent,
 
 ],
 imports: [
@@ -49,7 +51,8 @@ BrowserModule,
 AppRoutingModule,
 FormsModule,
 HttpClientModule,
-FontAwesomeModule
+FontAwesomeModule,
+ReactiveFormsModule
 ],
 providers: [],
 bootstrap: [AppComponent],

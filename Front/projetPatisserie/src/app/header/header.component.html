@@ -16,8 +16,9 @@
             <li class="nav-item active">
                 <a class="nav-link" href="http://localhost:4200/carte">Pâtisseries</a>
             </li>
-            <li *ngIf="connexion" class="nav-item active">
-              <a class="nav-link" href="http://localhost:4200/commande">Commander</a>
+            <li *ngIf="client && connexion" class="nav-item active">
+            <li class="nav-item active">
+              <a class="nav-link client" href="http://localhost:4200/commande">Commander</a>
             </li>
             <!-- <li class="nav-item">
               <a class="nav-link" href="http://localhost:4200/actualites">Actualités</a>
@@ -34,10 +35,10 @@
           <i class="fa-solid fa-people-roof"></i>
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="http://localhost:4200/stats">Statististiques</a>
+              <a class="nav-link manager" href="http://localhost:4200/stats">Statististiques</a>
             </li>
             <li class="nav-item active">
-              <a class="nav-link" href="http://localhost:4200/stock">Stock</a>
+              <a class="nav-link manager" href="http://localhost:4200/stock">Stock</a>
             </li>     
           </ul>
         </div>
@@ -47,13 +48,13 @@
           <i class="fa-solid fa-screwdriver-wrench"></i>
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="http://localhost:4200/utilisateurs">Gestion des utilisateurs</a>
+              <a class="nav-link admin" href="http://localhost:4200/utilisateurs">Gestion des utilisateurs</a>
             </li>
             <li class="nav-item active">
-              <a class="nav-link" href="http://localhost:4200/patisseries">Gestion patisseries</a>
+              <a class="nav-link admin" href="http://localhost:4200/patisseries">Gestion patisseries</a>
             </li>
             <li class="nav-item active">
-              <a class="nav-link" href="http://localhost:4200/commandes">Gestion commandes</a>
+              <a class="nav-link admin" href="http://localhost:4200/commandes">Gestion commandes</a>
             </li>     
           </ul>
         </div>
@@ -63,7 +64,7 @@
         </div> -->
 
         <div class="navbar-nav">
-          <a class="navbar-brand " href="http://localhost:4200"><span class="brand-letter">B</span> / <span class="brand-letter">G</span> </a>
+          <a class="navbar-brand " href="http://localhost:4200/presentation"><span class="brand-letter">B</span> / <span class="brand-letter">G</span> </a>
         </div>
 
         <div class="cnavbar navbar-expand-lg bg-light" id="navbarSupportedContent">
@@ -71,10 +72,12 @@
             <li class="nav-item">
               <a class="nav-link" href="http://localhost:4200/inscription">S'inscrire</a>
           </li>	
-          <li *ngIf="!connexion" class="nav-item">
-              <a class="nav-link" href="http://localhost:4200/authentification"><i class="fa-solid fa-circle-user"></i>Se connecter</a>
+          <!-- <li *ngIf="!connexion" class="nav-item"> -->
+          <li class="nav-item">
+              <a class="nav-link" href="http://localhost:4200/authentification"><i class="fa-solid fa-circle-user"></i> Se connecter</a>
           </li>	
-          <li *ngIf="connexion" class="nav-item">
+          <!-- <li *ngIf="connexion" class="nav-item"> -->
+          <li class="nav-item">
             <a type="button" (click)="quit()" class="nav-link" href="http://localhost:4200/presentation"><i class="fa-solid fa-right-from-bracket"></i> Se déconnecter</a>
           </li>			
           </ul>		  

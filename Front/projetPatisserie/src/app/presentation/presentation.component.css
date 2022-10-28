@@ -5,6 +5,8 @@ img{
     padding-bottom:5rem;
 }
 
+
+
 .container{
     margin : 0;
 }
@@ -41,6 +43,12 @@ img{
 .produits, .ingredients{
     padding:5rem;
     height:25rem;
+}
+
+.produits{
+    margin-top:-20rem;
+    padding-top:0;
+    
 }
 
 .illustration{

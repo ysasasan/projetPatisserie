@@ -1,67 +1,110 @@
-<p>commande works!</p>
+<div class="container page-container">
+    <div class="salutation text-center">Bonjour {{user.prenom}} {{user.nom}}</div>
+    <h1>Carte</h1>
+    
+    <div class="panier">
+        <button type="button" href="#myModal" class="btn-panier" data-bs-toggle="modal" role="button">
+            Panier <i class="fa-solid fa-basket-shopping"></i> ({{panier.length}})
+        </button>
+    </div>
+    <hr>
 
-<div class="panier">
-    <button type="button" href="#myModal" class="btn btn-demo" data-bs-toggle="modal" role="button">
-        Voir le panier
-        <i class="fa-solid fa-basket-shopping"></i></button>
-</div>
+
+
 
 <section id="sidebar">
-    <p> Menu | <b>Tous nos Desserts Gourmands</b></p>
-    <div class="border-bottom pb-2 ml-2">
+    <p> Filtre | <b>Tous nos desserts gourmands</b></p>
+    <!-- <div class="border-bottom pb-2 ml-2">
         <h4 id="burgundy">Filters</h4>
-    </div>
+    </div> -->
     <div class="py-2 border-bottom ml-3">
-        <h6 class="font-weight-bold">Categories</h6>
+        <h6 class="font-weight-bold">Catégories</h6>
         <div id="orange"><span class="fa fa-minus"></span></div>
         <form>
             <div class="form-group">
-                <input type="checkbox" id="gateau">
+                <input type="checkbox" id="gateau" name="gateau" [(ngModel)]="gateauChecked">
                 <label for="gateau">Gâteau</label>
             </div>
             <div class="form-group">
-                <input type="checkbox" id="tarte">
+                <input type="checkbox" id="tarte" name="tarte" [(ngModel)]="tarteChecked">
                 <label for="tarte">Tarte</label>
             </div>
             <div class="form-group">
-                <input type="checkbox" id="mignardise">
+                <input type="checkbox" id="mignardise" name="mignardise" [(ngModel)]="mignardiseChecked">
                 <label for="mignardise">Mignardise</label>
-            </div>                                
+            </div>
+            <!-- <div class="form-group">
+                <input type="checkbox" class="check" id="checkAll" (click)="tousFilter">
+                <label for="mignardise">Tous</label>
+            </div>    -->
         </form>
     </div>
-    
-    
+
 </section>
 <!-- products section -->
+
 <section id="products">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-4 col-md-6 col-sm-10 offset-md-0 offset-sm-1" *ngFor="let pist of MyList ">
-                <div class="card">
-                    <img class="card-img-top" src="/assets/img/{{pist.image}}" class="card-img-top" alt="image de {{pist.image}}">
-                    <div class="card-body">
-                        <h5 class="card-title">           
-                            <a>
-                            <span style="font-weight: bold;" >{{pist.nom }}</span>
-                        </a></h5>
-                        <div class="d-flex flex-row my-2">
-                            <div class="text-muted d-flex align-items-start">{{ pist.prix }}&euro;</div>
-                            <div class="d-flex align-items-center">
-                                <span class="card-text  ">{{pist.description}}</span>
-                          
-                                
-                        </div>
-                            <button class="btn btn-demo" data-bs-toggle="modal" href="#exampleModalToggle" role="button" (click)="getPatisserie(pist.nom,pist.image,pist.description,pist.prix)">Ajouter au panier</button>
-                        </div> 
-                           
-                    </div>
+    <div class="lightgreen-container text-center" *ngIf="tarteChecked==true">
+        <h2>Tarte</h2>
+        <div class="card mb-3" style="max-width: 540px;" *ngFor="let pist of tartes">
+            <div class="row g-0">
+                <div class="col-md-8">
+                  <div class="card-body">
+                  <h5 class="card-title">{{pist.nom}}</h5>
+                  <p class="card-text">{{pist.description}}</p>
+                  <p class="card-text"><small class="text-muted">{{pist.prix}}&euro;</small></p>
+                  <button class="btn-patisserie stretched-link" data-bs-toggle="modal" href="#exampleModalToggle" role="button" (click)="getPatisserie(pist.nom,pist.image,pist.description,pist.prix)">Ajouter au panier</button>
                 </div>
+              </div>
+              <div class="col-md-4">
+                <img src="/assets/img/{{pist.image}}" class="img-fluid rounded-start img-card-patisserie" alt="Image de {{pist.nom}}">
+              </div>
             </div>
-            
         </div>
+    </div>
+
+    <div class="container green-container text-center" *ngIf="gateauChecked===true">
+        <h2>Gâteau</h2>
+        <div class="card mb-3" style="max-width: 540px;" *ngFor="let pist of gateaux">
+            <div class="row g-0">
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">{{pist.nom}}</h5>
+                  <p class="card-text">{{pist.description}}</p>
+                  <p class="card-text"><small class="text-muted">{{pist.prix}}&euro;</small></p>
+                  <button class="btn-patisserie stretched-link" data-bs-toggle="modal" href="#exampleModalToggle" role="button" (click)="getPatisserie(pist.nom,pist.image,pist.description,pist.prix)">Ajouter au panier</button>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <img src="/assets/img/{{pist.image}}" class="img-fluid rounded-start img-card-patisserie" alt="Image de {{pist.nom}}">
+              </div>
+            </div>
+        </div>
+    </div>  
+
+
+    <div class="container lightgreen-container" *ngIf="mignardiseChecked==true">
+        <h2>Mignardise</h2>
+        <div class="card mb-3" style="max-width: 540px;" *ngFor="let pist of mignardises">
+            <div class="row g-0">
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">{{pist.nom}}</h5>
+                  <p class="card-text">{{pist.description}}</p>
+                  <p class="card-text"><small class="text-muted">{{pist.prix}}&euro;</small></p>
+                  <button class="btn-patisserie stretched-link" data-bs-toggle="modal" href="#exampleModalToggle" role="button" (click)="getPatisserie(pist.nom,pist.image,pist.description,pist.prix)">Ajouter au panier</button>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <img src="/assets/img/{{pist.image}}" class="img-fluid rounded-start img-card-patisserie" alt="Image de {{pist.nom}}">
+              </div>
+            </div>
+          </div>
     </div>   
-    
 </section>
+
+
+
 
 
 <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel"
@@ -73,16 +116,22 @@
         <h1 class="modal-title fs-5" id="exampleModalToggleLabel">{{p.nom}}</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body">
-        <img class="img_modal" src="assets/img/{{p.image}}">
-        <p>{{p.description}}</p>
+      <div class="modal-body text-center">
+        <img class="img-modal" src="assets/img/{{p.image}}">
+        <p class="description-patisserie-modale">{{p.description}}</p>
         <p>{{p.prix}}€</p>
       </div>
       <div class="modal-footer">
 
-        <button class="btn btn-demo" (click)="addPanier()">Valider</button>
+        <button class="btn btn-modal-central" (click)="addPanier()">Valider</button>
 
         <label>Quantité</label>
+
+        <!-- <div class="btn-group" role="group" aria-label="Basic example">
+            <button type="button" class="btn btn-secondary" name="minus-button" (click)="minus(quantite)">-</button>
+            <input type="text" class="btn btn-light quantity-input" [(ngModel)]="quantite">
+            <button type="button" class="btn btn-secondary" name="plus-button" (click)="plus(quantite,p.qteStock)">+</button>
+        </div> -->
 
         <input type="number" id="quantité" name="quantité"
         min="1" max={{p.qteStock}} [(ngModel)]="quantite">
@@ -99,39 +148,41 @@
 
 	
 	<!-- Modal -->
-	<div class="modal left fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	<div class="modal right fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
 
 				<div class="modal-header">
-					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 				</div>
 
 				<div class="modal-body">
 					<h3>Ma commande ({{panier.length}})</h3>
 
                     <div>
-                        <table  class="table table-striped">
+                        <table  class="table table-striped tab-modal">
                             <tr>
                                 <th>Quantite</th>
                                 <th>Patisserie</th>
                                 <th>Prix</th>
-                                <th>Suppr</th>
+                                <!-- <th>Suppr</th> -->
                             </tr>
                             <tr *ngFor="let ligne of panier; let i = index">
-                                <td>{{ligne.quantite}}</td>
+                                <!-- <td><input type="number" [(ngModel)]="ligne.quantite">{{ligne.quantite}}</td> -->
+                                <td><input class="input-ligne form-control" type="number" id="quantité" name="quantiteLigne"
+                                  min="1" max={{p.qteStock}} [(ngModel)]="ligne.quantite"></td>
                                 <td>{{ligne.patisserie.nom}}</td>
-                                <td>{{ligne.prix}}</td>
-                                <td><button (click)="edit(i)">X</button></td>
-                            </tr>
-                            <tr>
-                                <td colspan="4" align="center">
-                                    TOTAL : {{total}} €
-                                </td>
+                                <td>{{ligne.prix}}€</td>
+                                <!-- <td><button (click)="edit(i)"><i class="fa-solid fa-trash"></i></button></td> -->
                             </tr>
                         </table>
 
-                        <button class="btn btn-demo" (click)="validate()" [routerLink]="['/recapitulatif']">Valider votre commande</button>
+                        <div class="total-panier">
+                          TOTAL : {{total}} €
+                        </div>
+                        <button id="validateBasket" class="btn btn-modal-panier" (click)="validate()" [routerLink]="['/recapitulatif']">Valider votre commande</button>
+
+                        <!-- <button id="basket" class="btn btn-modal-panier" (click)="validate()">Valider votre commande</button> -->
                     
                         
                     </div>
@@ -142,23 +193,5 @@
 		</div><!-- modal-dialog -->
 	</div><!-- modal -->
 	
-	<!-- Modal -->
-	<div class="modal right fade" id="exampleModalToggle" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2">
-		<div class="modal-dialog" role="document">
-			<div class="modal-content">
 
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-					<h4 class="modal-title" id="myModalLabel2">Right Sidebar</h4>
-				</div>
-
-				<div class="modal-body">
-					<p>Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-					</p>
-				</div>
-
-			</div><!-- modal-content -->
-		</div><!-- modal-dialog -->
-	</div><!-- modal -->
-
-
+</div>

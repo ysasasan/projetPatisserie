@@ -1,81 +1,36 @@
-
-div{
-    margin: 0;
-    padding: 0;
+hr{
+    width :5rem;
+    margin-left:auto;
+    margin-right:auto;
 }
 
-.price{
-   
-    width: 99px;
-    
-
 .card-img-top{
-    width:15rem;
-    height:12rem;
-    margin-right:auto;
-    margin-left:auto;
+    width: 5rem;
+    height:15rem;
+}
+
+.img-fluid{
+    width: 20rem;
+    height:15rem;
+}
+
+.card{
+    height:28rem;
+    margin-bottom:1rem;
+    text-align: center;
 }
 
 .categories{
-    margin-top:3rem;
-    margin-bottom:3rem;
-    margin-right:auto;
-    margin-left:auto;
-
-}
-
-.container{
-    margin-right:auto;
-    margin-left:auto;
-    width: 50rem;
-}
-
-.card{
+    text-align: center;
     margin-top:2rem;
+    margin-bottom:1.5rem;
 }
 
-
-/* .price{
-    margin-left: 5px;
->>>>>>> Stashed changes
+.orange-container{
+    padding-top:2rem;
+    background-color:#FAD6A5;
 }
 
-.card-body{
-    padding: 8px;
+.green-container{
+    background-color: #A2B5BB;
 }
-
-.products{
-    
-    width: 70%;
-    padding: 10px;
-    
-    
-}
-.card{
-    width: 300px;
-    height: 330px;
-    border: none;
-}
-.card-img-top{
-    width: 295px;
-    height: 200px;
-    border-radius: 10px;
-}
-.text{
-    display: inline-block;
-}
-
-
-
-
-
-.img_modal{
-    width: 400px;
-    height: 400px;
-} */
-
-
-
-
-
-

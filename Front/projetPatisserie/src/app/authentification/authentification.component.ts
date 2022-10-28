@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, Injectable, OnInit } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { Utilisateur } from '../utilisateur';
 
 @Component({
@@ -16,6 +16,7 @@ export class AuthentificationComponent implements OnInit {
   user:Utilisateur= new Utilisateur();
   message:string='';
 
+  private router: Router
   
   constructor(private http: HttpClient) { }
 

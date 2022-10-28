@@ -1,3 +1,124 @@
+h1{
+    display:inline-block;
+}
+
+.salutation{
+    font-family: 'Great Vibes', cursive;
+    font-size: 3rem;
+}
+
+.btn-panier{
+    height:4rem;
+    border-radius: 0%;
+    background-color: #A2B5BB;
+    border-color: #A2B5BB;
+    color:white;
+}
+
+.green-container{
+    background-color: #A2B5BB;
+    text-align:center;
+    padding:2rem;
+}
+
+.lightgreen-container{
+    background-color: #EEEEEE;
+    text-align:center;
+    padding:2rem;
+}
+
+.btn-panier:hover{
+    opacity:50%;
+}
+
+.btn-patisserie{
+    opacity:0;
+}
+
+.btn-patisserie:hover{
+    color:white;
+    border:none;
+}
+
+
+.container input:checked ~ .checkmark{
+    background-color: #A2B5BB;
+}
+
+.card {
+    margin-left:auto;
+    margin-right:auto;
+ }
+
+.card:hover {
+    -webkit-filter: brightness(.5);
+    filter: brightness(.5);
+ }
+
+ .img-card-patisserie{
+    margin-top:0.5rem;
+    height: 9rem;
+    width: 15rem;
+ }
+
+ .btn-modal-central, .btn-modal-panier{
+    height:3rem;
+    border-radius: 0%;
+    background-color: #A2B5BB;
+    border-color: #647E68;
+    color:white;
+ }
+
+ .btn-modal-central:hover, .btn-modal-panier:hover{
+    opacity:50%;
+    color: #647E68;
+ }
+
+ .btn-modal-panier{
+    margin-left:15rem;
+    margin-top:3rem;
+ }
+
+ .input-ligne{
+    width:5rem;
+ }
+
+ .tab-modal, .total-panier{
+    margin-top:3rem;
+ }
+
+
+.page-container{
+    margin-top:5rem;
+}
+
+.img-modal {
+    text-align:center;
+    border-radius: 45%;
+    width:20rem;
+ }
+
+.img-modal {
+    text-align:center;
+    border-radius: 45%;
+    width:20rem;
+ }
+
+ .description-patisserie-modale{
+    margin-top:2rem;
+    font-family: 'Times New Roman', Times, serif;
+ }
+
+ .modal-title{
+    font-family: 'Great Vibes', cursive;
+    font-size: 3rem;
+ }
+
+ .quantity-input{
+    width:5rem;
+ }
+   
+
 /* body {
     background: #111 !important;
   }
@@ -38,7 +159,7 @@
   } */
 
   
-  .fa-user-o,.fa-shopping-cart{
+.fa-user-o,.fa-shopping-cart{
     font-size: 20px;
     padding: 4px;
 }
@@ -58,7 +179,7 @@ h6{
     outline: none;
     border: none;
 }
-.btn{
+/* .btn{
     border: 1px solid orange;
     border-radius: 10px;
     background-color: #fff;
@@ -66,7 +187,7 @@ h6{
 .btn:hover{
     color: #fff;
     background-color: orange;
-}
+} */
 .card-body{
     padding: 8px;
 }
@@ -113,9 +234,8 @@ h6{
         float: right;
     }
     .card{
-        width: 300px;
-        height: 330px;
-        border: none;
+        width:120rem;
+        height: 10rem;
     }
     .card-img-top{
         width: 295px;
@@ -283,40 +403,64 @@ h6{
     }
 }
 
-.img_modal{
-    width: 400px;
-    height: 400px;
+
+.panier{
+    float: right;
 }
 
+/* table td {border:2px solid rgb(7, 7, 7);}
+table th {border:2px solid rgb(7, 7, 7);} */
 
 
+
+
+
+
+/*******************************
+* MODAL AS LEFT/RIGHT SIDEBAR
+* Add "left" or "right" in modal parent div, after class="modal".
+* Get free snippets on bootpen.com
+*******************************/
 .modal.left .modal-dialog,
-	.modal.right .modal-dialog {
-		position: fixed;
-		margin: auto;
-		width: 320px;
-        padding-top: 4em;
-		height: 100%;
-		-webkit-transform: translate3d(0%, 0, 0);
-		    -ms-transform: translate3d(0%, 0, 0);
-		     -o-transform: translate3d(0%, 0, 0);
-		        transform: translate3d(0%, 0, 0);
-	}
+.modal.right .modal-dialog {
+    position: fixed;
+    margin: auto;
+    margin-top: 10rem;
+    width: 300rem;
+    height: 100%;
+    -webkit-transform: translate3d(0%, 0, 0);
+        -ms-transform: translate3d(0%, 0, 0);
+         -o-transform: translate3d(0%, 0, 0);
+            transform: translate3d(0%, 0, 0);
+}
 
-	.modal.left .modal-content,
-	.modal.right .modal-content {
-		height: 100%;
-		overflow-y: auto;
-	}
-	
-	.modal.left .modal-body,
-	.modal.right .modal-body {
-		padding: 15px 15px 80px;
-	}
+.modal.left .modal-content,
+.modal.right .modal-content {
+    height: 100%;
+    overflow-y: auto;
+}
 
+.modal.left .modal-body,
+.modal.right .modal-body {
+    padding: 15px 15px 80px;
+}
+
+/*Left*/
+.modal.left.fade .modal-dialog{
+    left: -320px;
+    -webkit-transition: opacity 0.3s linear, left 0.3s ease-out;
+       -moz-transition: opacity 0.3s linear, left 0.3s ease-out;
+         -o-transition: opacity 0.3s linear, left 0.3s ease-out;
+            transition: opacity 0.3s linear, left 0.3s ease-out;
+}
+
+.modal.left.fade.in .modal-dialog{
+    left: 0;
+}
+    
 /*Right*/
 .modal.right.fade .modal-dialog {
-    right: -320px;
+    right: 0px;
     -webkit-transition: opacity 0.3s linear, right 0.3s ease-out;
        -moz-transition: opacity 0.3s linear, right 0.3s ease-out;
          -o-transition: opacity 0.3s linear, right 0.3s ease-out;
@@ -337,11 +481,3 @@ h6{
     border-bottom-color: #EEEEEE;
     background-color: #FAFAFA;
 }
-
-.panier{
-    float: right;
-}
-
-table td {border:2px solid rgb(7, 7, 7);}
-table th {border:2px solid rgb(7, 7, 7);}
-

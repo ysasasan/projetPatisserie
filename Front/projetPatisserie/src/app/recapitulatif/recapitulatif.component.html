@@ -1,7 +1,11 @@
-<div>
+<div class="container">
+
+  <h3>Votre commande</h3>
+  <div>Nombre de douceurs dans votre panier : ({{lst.length}})</div>
+
     <table class="table table-striped">
         <thead>
-            <h3>Ma commande ({{lst.length}})</h3>
+            
           <tr>
             <th scope="col">Quantite</th>
             <th scope="col">Patisserie</th>
@@ -16,4 +20,7 @@
           </tr>
         </tbody>
       </table>
+
+      <button id="validateBasket" class="btn btn-modal-panier" (click)="buy()" [routerLink]="['/final']">Valider votre commande</button>
+
 </div>

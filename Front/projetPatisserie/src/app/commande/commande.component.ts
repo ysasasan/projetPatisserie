@@ -1,7 +1,9 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
 import { Ligne } from '../ligne';
 import { Patisserie } from '../patisserie';
+import { Utilisateur } from '../utilisateur';
 
 @Component({
   selector: 'app-commande',
@@ -10,24 +12,41 @@ import { Patisserie } from '../patisserie';
 })
 export class CommandeComponent implements OnInit {
 
+  @ViewChild('basket') basket;
+
   MyList: any
+  tartes: any
+  gateaux: Array<Patisserie>
+  mignardises: Array<Patisserie>
   p: Patisserie = new Patisserie()
   panier: Array<Ligne> = new Array()
-  quantite: number = 0
+  quantite: number = 1
   prixLigne: number = 0
   total: number = 0
   message: string
-  // ligne: Ligne = new Ligne();
+
+  tarteChecked:Boolean=true;
+  gateauChecked:Boolean=true;
+  mignardiseChecked:Boolean=true;
+  //tousFilter=false;
+
+  user:Utilisateur
+
 
   showMyMessage = false
   
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private fb: FormBuilder) { }
 
   ngOnInit(): void {
     this.http.get("http://localhost:8081/au-bonheur-des-gourmands/patisseries").subscribe(
       (response) => {
       
         this.MyList=response;
+
+        this.tartes = this.MyList.filter(patisserie => patisserie.categorie==='tarte');
+        this.gateaux = this.MyList.filter(patisserie => patisserie.categorie==='gateau');
+        this.mignardises = this.MyList.filter(patisserie => patisserie.categorie==='miniardise');
+
       },
       (err) => {
          console.log("*************KO")
@@ -39,6 +58,9 @@ export class CommandeComponent implements OnInit {
         
       }
       );
+
+      this.user=JSON.parse(sessionStorage.getItem("utilisateur"));
+
   }
 
   getPatisserie(nom,image,description,prix){
@@ -56,33 +78,38 @@ export class CommandeComponent implements OnInit {
     let patisserie: Patisserie = new Patisserie()
 
     patisserie.nom=this.p.nom
-    // ligne.patisserie.nom=this.p.nom
 
     ligne.patisserie=patisserie
     ligne.quantite=this.quantite
     ligne.prix=this.quantite*this.p.prix
 
-    // this.prixLigne=this.quantite*this.p.prix
-    // ligne.setLigne(this.p,this.quantite,this.prixLigne)
     this.panier.push(ligne)
-
     this.total+=ligne.prix
-
-    this.quantite=0
+    this.quantite=1
+    
     this.message="Ajouté au panier"
 
   }
 
-
   validate(){
     sessionStorage.setItem("panier",JSON.stringify(this.panier))
-
+    console.log(this.panier)
   }
 
   edit(i:any){
     this.total-=this.panier[i].prix
     delete(this.panier[i])
   }
+
+  // minus(q){
+  //   console.log("minus.q"+q);
+  //   return (q>1) ? q-- : 1;
+  // }
+
+  // plus(q, stock){
+  //   console.log("plusq."+q+"stock."+stock);
+  //   return (stock>q) ? q++ : q;
+  // }
   
 
 }

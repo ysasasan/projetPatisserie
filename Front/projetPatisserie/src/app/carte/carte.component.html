@@ -1,79 +1,177 @@
-<p>carte works!</p>
 
-<!-- products section -->
-<div class="products">
-    <div class="container text-center">
-        <h3 class="categories">Les Tartes</h3>
-        
-        <div class="row ">
-            
-            <div class="col-4 "  *ngFor="let pist of  MyList ">
-                
-                <div class="card" *ngIf="pist.categorie==='tarte'">
-                    <img class="card-img-top" src="/assets/img/{{pist.image }}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">           
-                            <a>
-                            <span style="font-weight: bold;" >{{pist.nom }}</span>
-                        </a></h5>
-                        <div class="">
-                                <div class="text-muted d-flex align-items-end">{{ pist.prix }}&euro;</div>
-                                <div class="">
-                                    <span class="card-text ">{{pist.description}}</span>
-                                    
-                                </div>
-                           
-                        </div> 
-                           
-                    </div>
 
-<div class="container">
-    <h3 class="categories">Les Tartes</h3>
-    <div class="row">
-        <div class="col" *ngFor="let pist of MyList">
-            <div class="card" style="width: 18rem;" *ngIf="pist.categorie==='tarte'">
-                <img class="card-img-top" src="/assets/img/{{pist.image}}" class="card-img-top" alt="{{pist.image}}">
-                <div class="card-body">
-                    <h5 class="card-title">{{pist.nom }}</h5>
-                    <div class="text-muted d-flex align-items-end">{{ pist.prix}}&euro;</div>
-                    <p class="card-text"><span class="card-text ">{{pist.description}}</span></p>
+<div class="container py-5">
+  <!-- For Demo Purpose-->
+  <header class="text-center mb-5">
+    <h1 class="display-4 font-weight-bold">Découvrez nos spécialités</h1>
+    <p class="font-italic text-muted mb-0">Les ingrédients sont choisis avec soins, bio, en collaboration avec nos producteurs locaux.</p>
+</header>
 
-                </div>
-            </div>
+<div class="container orange-container">
+    <h2 class="font-weight-bold mb-2">Nos clients aiment...</h2>
+    <p class="font-italic text-muted mb-4">.</p>
+  
+    <div class="row pb-5 mb-4">
+      <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+        <!-- Card-->
+        <div class="card rounded shadow-sm border-0">
+          <div class="card-body p-4"><img src="assets/img/eclaire-pistache.jpg" alt="" class="img-fluid d-block mx-auto mb-3">
+            <h5> <a href="#" class="text-dark">Notre Eclair Vert à la Pistache</a></h5>
+            <p class="small text-muted font-italic">"Une explosion de saveur - pour les gourmands avertis."</p>
+            <ul class="list-inline small">
+              <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+              <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+              <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+              <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+              <li class="list-inline-item m-0"><i class="fa fa-star-o text-success"></i></li>
+            </ul>
+          </div>
         </div>
+      </div>
+  
+      <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+        <!-- Card-->
+        <div class="card rounded shadow-sm border-0">
+          <div class="card-body p-4"><img src="assets/img/religieuse-genate-chocolat.jpg" alt="" class="img-fluid d-block mx-auto mb-3">
+            <h5> <a href="#" class="text-dark">La Religieuse Coquine</a></h5>
+            <p class="small text-muted font-italic">"Amateurs de chocolat - encas idéal!"</p>
+            <ul class="list-inline small">
+              <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+              <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+              <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+              <li class="list-inline-item m-0"><i class="fa fa-star-o text-success"></i></li>
+              <li class="list-inline-item m-0"><i class="fa fa-star-o text-success"></i></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+  
+      <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+        <!-- Card-->
+        <div class="card rounded shadow-sm border-0">
+          <div class="card-body p-4"><img src="assets/img/tarte-fraise.jpg" alt="" class="img-fluid d-block mx-auto mb-3">
+            <h5> <a href="#" class="text-dark">La Tarte aux Fraises</a></h5>
+            <p class="small text-muted font-italic">"Du fruit, du fruit, du fruit, on adore!"</p>
+            <ul class="list-inline small">
+              <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+              <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+              <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+              <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+              <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+  
+      <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+        <!-- Card-->
+        <div class="card rounded shadow-sm border-0">
+          <div class="card-body p-4"><img src="assets/img/millefeuille.jpg" alt="" class="img-fluid d-block mx-auto mb-3">
+            <h5> <a href="#" class="text-dark">Le Millefeuille Croustillant</a></h5>
+            <p class="small text-muted font-italic">"Léger mais gourmand à la fois..."</p>
+            <ul class="list-inline small">
+              <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+              <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+              <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+              <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+              <li class="list-inline-item m-0"><i class="fa fa-star-o text-success"></i></li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
 </div>
 
-<div class="container">
-    <h3 class="categories">Les Gâteaux</h3>
-    <div class="row">
-        <div class="col" *ngFor="let pist of MyList">
-            <div class="card" style="width: 18rem;" *ngIf="pist.categorie==='gateau'">
-                <img class="card-img-top" src="/assets/img/{{pist.image }}" class="card-img-top" alt="{{pist.image}}">
-                <div class="card-body">
-                    <h5 class="card-title">{{pist.nom }}</h5>
-                    <div class="text-muted d-flex align-items-end">{{ pist.prix}}&euro;</div>
-                    <p class="card-text"><span class="card-text ">{{pist.description}}</span></p>
-                </div>
-            </div>
+ 
+
+
+  <!-- Second Row [Team]-->
+  <h2 class="font-weight-bold mb-2 text-center">Notre carte</h2>
+  <p class="font-italic text-muted mb-4 text-center">Tartes, gâteaux, miniardises, il y en a pour tous les goûts...</p>
+
+  <div class="row pb-5 mb-4 green-container">
+    <div class="categories">
+        <h3>Les Tartes</h3>
+        <hr>
+    </div>
+    <div class="col-lg-3 col-md-6 mb-4 mb-lg-0" *ngFor="let pist of tartes">
+      <!-- Card-->
+      <div class="card shadow-sm border-0 rounded">
+        <div class="card-body p-0"><img src="/assets/img/{{pist.image}}" class="w-100 card-img-top" alt="{{pist.nom}}">
+          <div class="p-4">
+            <h5 class="mb-0">{{pist.nom}}</h5>
+            <p class="small text-muted">{{pist.prix }}&euro;</p>
+            <p class="card-text"><span class="card-text ">{{pist.description}}</span></p>    
+          </div>
         </div>
+      </div>
     </div>
 </div>
 
-<div class="container">
-    <h3 class="categories">Les Miniardises</h3>
-    <div class="row">
-        <div class="col" *ngFor="let pist of MyList">
-            <div class="card" style="width: 18rem;" *ngIf="pist.categorie==='migniardise'">
-                <img class="card-img-top" src="/assets/img/{{pist.image}}" class="card-img-top" alt="{{pist.nom}}">
-                <div class="card-body">
-                    <h5 class="card-title">{{pist.nom }}</h5>
-                    <div class="text-muted d-flex align-items-end">{{ pist.prix }}&euro;</div>
-                    <p class="card-text"><span class="card-text ">{{pist.description}}</span></p>
-                </div>
+    <div class="row pb-5 mb-4">
+        <div class="categories">
+            <h3 class="categories">Les Gâteaux</h3>
+            <hr>
+        </div>
+        <div class="col-lg-3 col-md-6 mb-4 mb-lg-0" *ngFor="let pist of gateaux">
+          <!-- Card-->
+          <div class="card shadow-sm border-0 rounded">
+            <div class="card-body p-0"><img src="/assets/img/{{pist.image}}" class="w-100 card-img-top" alt="{{pist.nom}}">
+              <div class="p-4">
+                <h5 class="mb-0">{{pist.nom}}</h5>
+                <p class="small text-muted">{{pist.prix }}&euro;</p>
+                <p class="card-text"><span class="card-text ">{{pist.description}}</span></p>    
+              </div>
             </div>
+          </div>
         </div>
     </div>
-</div>
-    
+
+        <div class="row pb-5 mb-4 green-container">
+            <div class="categories">
+                <h3 class="categories">Les Mignardises</h3>
+                <hr>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4 mb-lg-0" *ngFor="let pist of miniardises">
+              <!-- Card-->
+              <div class="card shadow-sm border-0 rounded">
+                <div class="card-body p-0"><img src="/assets/img/{{pist.image}}" class="w-100 card-img-top" alt="{{pist.nom}}">
+                  <div class="p-4">
+                    <h5 class="mb-0">{{pist.nom}}</h5>
+                    <p class="small text-muted">{{pist.prix }}&euro;</p>
+                    <p class="card-text"><span class="card-text ">{{pist.description}}</span></p>    
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+
+  <!-- Third Row [Profiles]-->
+  <!-- <h2 class="font-weight-bold mb-2">Notre staff</h2>
+  <p class="font-italic text-muted mb-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
+
+  <div class="row pb-5 mb-4">
+
+    <div class="col-lg-3 col-md-6 mb-4 mb-lg-0"> -->
+      <!-- Card-->
+      <!-- <div class="card rounded shadow-sm border-0">
+        <div class="card-body p-0">
+          <div class="bg-primary px-5 py-4 text-center card-img-top"><img src="https://bootstrapious.com/i/snippets/sn-cards/teacher-4.jpg" alt="..." width="100" class="rounded-circle mb-2 img-thumbnail d-block mx-auto">
+            <h5 class="text-white mb-0">Emma Nevoresky</h5>
+            <p class="small text-white mb-0">Elite user</p>
+          </div>
+          <div class="p-4 d-flex justify-content-center">
+            <ul class="list-inline mb-0">
+              <li class="list-inline-item">
+                <h5 class="font-weight-bold mb-0 d-block">241</h5><small class="text-muted"><i class="fa fa-picture-o mr-1 text-primary"></i>Photos</small>
+              </li>
+              <li class="list-inline-item">
+                <h5 class="font-weight-bold mb-0 d-block">84K</h5><small class="text-muted"><i class="fa fa-user-circle-o mr-1 text-primary"></i>Followers</small>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div> -->
 
