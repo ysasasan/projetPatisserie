@@ -52,7 +52,7 @@ AppRoutingModule,
 FormsModule,
 HttpClientModule,
 FontAwesomeModule,
-ReactiveFormsModule
+ReactiveFormsModule,
 ],
 providers: [],
 bootstrap: [AppComponent],

@@ -3,7 +3,7 @@
     <h1>Carte</h1>
     
     <div class="panier">
-        <button type="button" href="#myModal" class="btn-panier" data-bs-toggle="modal" role="button">
+        <button type="button" href="#myModal" class="btn-panier" data-bs-toggle="modal" role="button" (click)="openModal()">
             Panier <i class="fa-solid fa-basket-shopping"></i> ({{panier.length}})
         </button>
     </div>
@@ -148,7 +148,7 @@
 
 	
 	<!-- Modal -->
-	<div class="modal right fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	<div class="modal right fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" *ngIf="modalClosed">
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
 
@@ -165,15 +165,15 @@
                                 <th>Quantite</th>
                                 <th>Patisserie</th>
                                 <th>Prix</th>
-                                <!-- <th>Suppr</th> -->
+                                <th>Suppr</th>
                             </tr>
-                            <tr *ngFor="let ligne of panier; let i = index">
+                            <tr *ngFor="let ligne of panier; let i = index">true
                                 <!-- <td><input type="number" [(ngModel)]="ligne.quantite">{{ligne.quantite}}</td> -->
                                 <td><input class="input-ligne form-control" type="number" id="quantité" name="quantiteLigne"
                                   min="1" max={{p.qteStock}} [(ngModel)]="ligne.quantite"></td>
                                 <td>{{ligne.patisserie.nom}}</td>
                                 <td>{{ligne.prix}}€</td>
-                                <!-- <td><button (click)="edit(i)"><i class="fa-solid fa-trash"></i></button></td> -->
+                                <td><button (click)="edit(i)"><i class="fa-solid fa-trash"></i></button></td>
                             </tr>
                         </table>
 

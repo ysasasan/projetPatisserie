@@ -1,6 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
+import { NavigationEnd, Router } from '@angular/router';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { Ligne } from '../ligne';
 import { Patisserie } from '../patisserie';
 import { Utilisateur } from '../utilisateur';
@@ -34,8 +36,10 @@ export class CommandeComponent implements OnInit {
 
 
   showMyMessage = false
+  modalClosed:boolean = true;
+
   
-  constructor(private http: HttpClient, private fb: FormBuilder) { }
+  constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
     this.http.get("http://localhost:8081/au-bonheur-des-gourmands/patisseries").subscribe(
@@ -61,6 +65,7 @@ export class CommandeComponent implements OnInit {
 
       this.user=JSON.parse(sessionStorage.getItem("utilisateur"));
 
+      
   }
 
   getPatisserie(nom,image,description,prix){
@@ -93,12 +98,16 @@ export class CommandeComponent implements OnInit {
 
   validate(){
     sessionStorage.setItem("panier",JSON.stringify(this.panier))
-    console.log(this.panier)
+    this.modalClosed = true;
   }
 
   edit(i:any){
     this.total-=this.panier[i].prix
     delete(this.panier[i])
+  }
+
+  openModal(){
+    this.modalClosed=true;
   }
 
   // minus(q){

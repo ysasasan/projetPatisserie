@@ -29,7 +29,7 @@ export class RecapitulatifComponent implements OnInit {
  
      const body=JSON.stringify({"patisseries":this.lst, "utilisateur":this.user});
     
-     this.http.post("http://localhost:8081/api/article",body,{
+     this.http.post("http://localhost:8081/au-bonheur-des-gourmands/commande/new",body,{
        headers: new HttpHeaders({
          "Content-Type": "application/json"
        })
@@ -45,23 +45,6 @@ export class RecapitulatifComponent implements OnInit {
          this.message="Erreur de creation article"
        });
    }
-
-
-
-   
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
   }
